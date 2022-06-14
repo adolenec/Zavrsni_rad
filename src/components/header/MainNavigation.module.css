@@ -40,6 +40,17 @@
   height: 100%;
 }
 
+.items ul li {
+    display: flex;
+    align-items: centers;
+    gap: .5rem;
+}
+
+.items ul li i {
+    position: relative;
+    top: 2px;
+}
+
 .items ul li:hover {
   background: black;
   cursor: pointer;

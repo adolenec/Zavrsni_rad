@@ -13,11 +13,11 @@ const MainNavigation = () => {
       </div>
       <div className={classes.items}>
         <ul>
-          <li>Drivers</li>
-          <li>Teams</li> 
-          <li>Circuits</li>
+          <li>Drivers <i className="fa-solid fa-angle-down"></i></li>
+          <li>Constructors <i className="fa-solid fa-angle-down"></i></li> 
+          <li>Circuits <i className="fa-solid fa-angle-down"></i></li>
           <li>Standings</li>
-          <li>Schedule</li>
+          <li>Schedule <i className="fa-solid fa-angle-down"></i></li>
         </ul>
       </div>
     </nav>

@@ -2,6 +2,7 @@ import classes from "./MainNavigation.module.css";
 import logo from "../../images/logo1.jpg";
 
 const MainNavigation = () => {
+
   return (
     <nav className={classes.nav}>
       <div className={classes.logo}>

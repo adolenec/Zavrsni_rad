@@ -14,7 +14,7 @@ const MainNavigation = () => {
       <div className={classes.items}>
         <ul>
           <li>Drivers</li>
-          <li>Teams</li>
+          <li>Teams</li> 
           <li>Circuits</li>
           <li>Standings</li>
           <li>Schedule</li>

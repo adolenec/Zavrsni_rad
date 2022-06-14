@@ -24,7 +24,7 @@
 }
 
 .nav ul li {
-  list-style: none;
+  list-style: none; 
   height: 100%;
   display: flex;
   align-items: center;

@@ -1,5 +1,11 @@
+import MainNavigation from "./components/header/MainNavigation";
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <MainNavigation />
+    </>
+  );
 }
 
 export default App;

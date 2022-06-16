@@ -1,27 +1,59 @@
 import classes from "./MainNavigation.module.css";
 import logo from "../../images/logo1.jpg";
+import { useState } from "react";
+import NavigationItem from "./NavigationItem";
+import Header from "./Header";
+
+const navTitles = [
+  "Drivers",
+  "Constructors",
+  "Circuits",
+  "Standings",
+  "Schedule",
+];
 
 const MainNavigation = () => {
+  const [showHeader, setShowHeader] = useState(false);
+  const [apiEndpoint, setApiEndpoint] = useState("");
+
+  const displayHeader = (path) => {
+    setShowHeader(true);
+    setApiEndpoint(path);
+  };
+
+  const hideHeader = () => {
+    setShowHeader(false);
+    setApiEndpoint("");
+  };
+
+  console.log(apiEndpoint);
 
   return (
-    <nav className={classes.nav}>
-      <div className={classes.logo}>
-        <ul>
-          <li>
-            <img src={logo} alt="Logo" />
-          </li>
-        </ul>
-      </div>
-      <div className={classes.items}>
-        <ul>
-          <li>Drivers <i className="fa-solid fa-angle-down"></i></li>
-          <li>Constructors <i className="fa-solid fa-angle-down"></i></li> 
-          <li>Circuits <i className="fa-solid fa-angle-down"></i></li>
-          <li>Standings</li>
-          <li>Schedule <i className="fa-solid fa-angle-down"></i></li>
-        </ul>
-      </div>
-    </nav>
+    <>
+      <nav className={classes.nav}>
+        <div className={classes.logo}>
+          <ul>
+            <li>
+              <img src={logo} alt="Logo" />
+            </li>
+          </ul>
+        </div>
+        <div className={classes.items}>
+          <ul>
+            {navTitles.map((title) => (
+              <NavigationItem
+                key={title}
+                title={title}
+                onShowHeader={displayHeader}
+              />
+            ))}
+          </ul>
+        </div>
+      </nav>
+      {showHeader && (
+        <Header endpoint={apiEndpoint} onHideHeader={hideHeader} />
+      )}
+    </>
   );
 };
 

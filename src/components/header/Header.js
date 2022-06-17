@@ -1,23 +1,67 @@
 import classes from "./Header.module.css";
 import { useEffect, useState } from "react";
-import { getCurrentYearData } from "../../helpers/api/api-drivers";
+import {
+  getCurrentDriversStanding,
+  getCurrentYearData,
+} from "../../helpers/api/api-drivers";
+import HeaderItem from "./HeaderItem";
+import { getCurrentSchedule } from "../../helpers/api/api-schedule";
 
 const Header = (props) => {
   const [currentYearData, setCurrentYearData] = useState([]);
+  const [currentDriversStanding, setCurrentDriversStanding] = useState([]);
+  const [currentSchedule, setCurrentSchedule] = useState([]);
 
   useEffect(() => {
-    getCurrentYearData(props.endpoint).then((data) => setCurrentYearData(data));
+    if (
+      props.endpoint === "drivers" ||
+      props.endpoint === "constructors" ||
+      props.endpoint === "circuits"
+    ) {
+      getCurrentYearData(props.endpoint).then((data) =>
+        setCurrentYearData(data)
+      );
+    }
+
+    if (props.endpoint === "standings") {
+      getCurrentDriversStanding(3).then((data) =>
+        setCurrentDriversStanding(data)
+      );
+    }
+
+    if (props.endpoint === "schedule") {
+      getCurrentSchedule().then((data) => setCurrentSchedule(data));
+    }
   }, [props.endpoint]);
 
-  console.log(currentYearData);
+  let headerData;
+
+  if (
+    props.endpoint === "drivers" ||
+    props.endpoint === "constructors" ||
+    props.endpoint === "circuits"
+  ) {
+    headerData = currentYearData;
+  } else if (props.endpoint === "standings") {
+    headerData = currentDriversStanding;
+  } else if (props.endpoint === "schedule") {
+    headerData = currentSchedule;
+  }
 
   return (
     <div className={classes.header} onMouseLeave={props.onHideHeader}>
-      {currentYearData.map((data) => (
-        <p key={data.driverId}>
-          {data.name} {data.givenName} {data.familyName} {data.circuitName}
-        </p>
+      {headerData.map((data) => (
+        <HeaderItem
+          key={[data.url, data.position]}
+          headerData={data}
+          endpoint={props.endpoint}
+        />
       ))}
+      <div className={classes.btn}>
+        <button>
+          More Info <i className="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
     </div>
   );
 };

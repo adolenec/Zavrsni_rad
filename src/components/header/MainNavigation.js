@@ -26,8 +26,6 @@ const MainNavigation = () => {
     setApiEndpoint("");
   };
 
-  console.log(apiEndpoint);
-
   return (
     <>
       <nav className={classes.nav}>

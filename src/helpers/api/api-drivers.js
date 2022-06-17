@@ -16,3 +16,15 @@ export async function getCurrentYearData(url) {
 
   return currentYearData;
 }
+
+export async function getCurrentDriversStanding(limit) {
+  const response = await fetch(
+    `http://ergast.com/api/f1/current/driverStandings.json?limit=${limit}`
+  );
+  const data = await response.json();
+
+  const currentDriverStanding =
+    data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+
+  return currentDriverStanding;
+}

@@ -1,0 +1,36 @@
+.header-item {
+  width: 23%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  flex-direction: column;
+}
+
+.header-item:hover {
+  border-bottom: 1px solid rgb(225, 0, 0);
+  cursor: pointer;
+  color: rgb(175, 174, 174);
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-item img {
+    height: 200px;
+    width: 200px;
+}
+
+.upcoming-races {
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    display: flex;
+    gap: .25rem;
+}

@@ -6,7 +6,7 @@ const NavigationItem = ({ title, onShowHeader }) => {
   return (
     <li onMouseEnter={displayHeader}>
       {title}
-      {title !== "Standings" && <i className="fa-solid fa-angle-down"></i>}
+      <i className="fa-solid fa-angle-down"></i>
     </li>
   );
 };

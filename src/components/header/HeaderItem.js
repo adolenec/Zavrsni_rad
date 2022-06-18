@@ -1,5 +1,6 @@
 import classes from "./HeaderItem.module.css";
 import { driversImages } from "../../helpers/drivers-images";
+import { constructorsImages } from "../../helpers/constructors-images";
 
 const HeaderItem = ({ headerData, endpoint }) => {
   let data = [];
@@ -13,6 +14,9 @@ const HeaderItem = ({ headerData, endpoint }) => {
   } else if (endpoint === "constructors") {
     data = {
       name: headerData.name,
+      constructorImage: constructorsImages.find((constructor) =>
+        constructor.includes(headerData.constructorId)
+      ),
     };
   } else if (endpoint === "circuits") {
     data = {
@@ -30,7 +34,14 @@ const HeaderItem = ({ headerData, endpoint }) => {
     };
   } else {
     let upcomingRaces = [];
-    const formatedRaceDate = headerData.date.replaceAll("-", "/");
+    const formatedRaceDate = new Date(headerData.date).toLocaleDateString(
+      "en-US",
+      {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }
+    );
     if (headerData.date > todayDate) {
       data = {
         name: headerData.Circuit.circuitName,
@@ -45,16 +56,19 @@ const HeaderItem = ({ headerData, endpoint }) => {
   return (
     <div className={classes["header-item"]}>
       <div className={classes.info}>
-        <h3>
-          {data.name} {data.lastName}
-        </h3>
+        <div className={classes.about}>
+          {data.constructorImage && <img src={data.constructorImage} alt={data.name}/>}
+          <h3>
+            {data.name} {data.lastName}
+          </h3>
+        </div>
         <span>
           <i className="fa-solid fa-angle-right"></i>
         </span>
       </div>
       <div>
         <div className={classes["upcoming-races"]}>
-          {data.race && <p>Date: {data.race}</p>}
+          {data.race && <p>{data.race}</p>}
         </div>
         {data.position && <p>Ranking: {data.position}</p>}
         {data.points && <p>Points: {data.points}</p>}

@@ -1,6 +1,7 @@
 import classes from "./HeaderItem.module.css";
 import { driversImages } from "../../helpers/drivers-images";
 import { constructorsImages } from "../../helpers/constructors-images";
+import { formatedDate } from "../../helpers/helper-variables";
 
 const HeaderItem = ({ headerData, endpoint }) => {
   let data = [];
@@ -10,11 +11,14 @@ const HeaderItem = ({ headerData, endpoint }) => {
     data = {
       name: headerData.givenName,
       lastName: headerData.familyName,
+      image: driversImages.find((driver) =>
+        driver.includes(headerData.familyName)
+      ),
     };
   } else if (endpoint === "constructors") {
     data = {
       name: headerData.name,
-      constructorImage: constructorsImages.find((constructor) =>
+      image: constructorsImages.find((constructor) =>
         constructor.includes(headerData.constructorId)
       ),
     };
@@ -28,20 +32,13 @@ const HeaderItem = ({ headerData, endpoint }) => {
       lastName: headerData.Driver.familyName,
       position: headerData.position,
       points: headerData.points,
-      image: driversImages.find((driver) =>
+      standingsImage: driversImages.find((driver) =>
         driver.includes(headerData.Driver.familyName)
       ),
     };
   } else {
     let upcomingRaces = [];
-    const formatedRaceDate = new Date(headerData.date).toLocaleDateString(
-      "en-US",
-      {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-      }
-    );
+    const formatedRaceDate = formatedDate(headerData.date);
     if (headerData.date > todayDate) {
       data = {
         name: headerData.Circuit.circuitName,
@@ -57,7 +54,7 @@ const HeaderItem = ({ headerData, endpoint }) => {
     <div className={classes["header-item"]}>
       <div className={classes.info}>
         <div className={classes.about}>
-          {data.constructorImage && <img src={data.constructorImage} alt={data.name}/>}
+          {data.image && <img src={data.image} alt={data.name} />}
           <h3>
             {data.name} {data.lastName}
           </h3>
@@ -73,7 +70,9 @@ const HeaderItem = ({ headerData, endpoint }) => {
         {data.position && <p>Ranking: {data.position}</p>}
         {data.points && <p>Points: {data.points}</p>}
       </div>
-      {data.image && <img src={data.image} alt="Driver" />}
+      <div className={classes["standings-image"]}>
+        {data.standingsImage && <img src={data.standingsImage} alt="Driver" />}
+      </div>
     </div>
   );
 };

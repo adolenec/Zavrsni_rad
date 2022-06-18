@@ -1,50 +1,54 @@
 .item {
-    width: 23%;
-    padding: .5rem 1rem 0;
-    border: 1px solid black;
-    border-radius: 10px;
-    background: rgb(240, 240, 240);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+  width: 23%;
+  padding: 0.5rem 1rem 0.2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 1rem;
 }
 
 .item:hover {
-    background: rgb(179, 179, 179);
-    cursor: pointer;
-    top: -5px;
+  background: rgb(179, 179, 179);
+  cursor: pointer;
+  top: -5px;
 }
 
-.item .image{
-    width: 100%;
+.item .image {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0.4rem 0 0;
 }
 
 .item .image img {
-    width: 100%;
+  width: 100%;
 }
 
-.driver-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 0.4rem 0;
 }
 
-.driver-info img {
-    width: 60px;
-    height: 30px;
+.info img {
+  width: 60px;
+  height: 30px;
 }
 
-.number {
-    border-bottom: 1px solid black;
+.header {
+  border-bottom: 1px solid black;
 }
 
-.number p {
-    font-size: 2rem;
-    font-weight: bold;
+.header p {
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 .names p {
-    font-size: .9rem;
+  font-size: 0.9rem;
 }

@@ -6,7 +6,7 @@ import ferrari from "../images/constructors/ferrari.png";
 import haas from "../images/constructors/haas.png";
 import mclaren from "../images/constructors/mclaren.png";
 import mercedes from "../images/constructors/mercedes.png";
-import red_bull from "../images/constructors/red_bull.jpg";
+import red_bull from "../images/constructors/red_bull.webp";
 import williams from "../images/constructors/williams.jpg";
 
 export const constructorsImages = [

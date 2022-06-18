@@ -1,4 +1,5 @@
 import MainNavigation from "./components/header/MainNavigation";
+import CurrentCalendar from "./components/starting-page/CurrentCalendar";
 import CurrentGrid from "./components/starting-page/CurrentGrid";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <MainNavigation />
       <CurrentGrid/>
+      <CurrentCalendar/>
     </>
   );
 }

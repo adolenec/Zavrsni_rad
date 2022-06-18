@@ -24,7 +24,7 @@ const Header = (props) => {
     }
 
     if (props.endpoint === "standings") {
-      getCurrentDriversStanding(3).then((data) =>
+      getCurrentDriversStanding(4).then((data) =>
         setCurrentDriversStanding(data)
       );
     }

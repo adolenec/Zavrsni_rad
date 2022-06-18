@@ -1,0 +1,9 @@
+.header {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 5px solid black;
+}
+
+.header h1 i {
+    color: rgb(225, 0, 0);
+}

@@ -39,7 +39,7 @@ const HeaderItem = ({ headerData, endpoint }) => {
   } else {
     let upcomingRaces = [];
     const formatedRaceDate = formatedDate(headerData.date);
-    if (headerData.date > todayDate) {
+    if (headerData.date >= todayDate) {
       data = {
         name: headerData.Circuit.circuitName,
         race: formatedRaceDate,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCurrentSchedule } from "../../helpers/api/api-schedule";
-import { circuitsImages } from "../../helpers/circuits-images";
+import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
 import { formatedDate } from "../../helpers/helper-variables";
 import Wrapper from "../ui/Wrapper";
 import classes from "./NextRace.module.css";

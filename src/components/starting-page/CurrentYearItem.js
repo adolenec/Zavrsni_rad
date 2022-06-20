@@ -1,7 +1,7 @@
 import classes from "./CurrentYearItem.module.css";
-import { driversImages } from "../../helpers/drivers-images";
-import { driversNationalityImages } from "../../helpers/drivers-nationalities-images";
-import { circuitsImages } from "../../helpers/circuits-images";
+import { driversImages } from "../../helpers/image-arrays/drivers-images";
+import { driversNationalityImages } from "../../helpers/image-arrays/drivers-nationalities-images";
+import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
 import { formatedDate } from "../../helpers/helper-variables";
 
 const CurrentYearItem = ({ currentYearData, endpoint }) => {

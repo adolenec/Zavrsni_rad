@@ -1,5 +1,5 @@
 import { setLimit } from "../helper-variables";
-import { circuitsImages } from "../circuits-images";
+import { circuitsImages } from "../image-arrays/circuits-images";
 
 export async function getLastRaceResults(limit) {
   const limitData = setLimit(limit);

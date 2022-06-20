@@ -1,6 +1,6 @@
 import classes from "./HeaderItem.module.css";
-import { driversImages } from "../../helpers/drivers-images";
-import { constructorsImages } from "../../helpers/constructors-images";
+import { driversImages } from "../../helpers/image-arrays/drivers-images";
+import { constructorsImages } from "../../helpers/image-arrays/constructors-images";
 import { formatedDate } from "../../helpers/helper-variables";
 
 const HeaderItem = ({ headerData, endpoint }) => {

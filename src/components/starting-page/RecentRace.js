@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getLastRaceResults } from "../../helpers/api/api-race-results";
-import { driversImages } from "../../helpers/drivers-images";
+import { driversImages } from "../../helpers/image-arrays/drivers-images";
 import Wrapper from "../ui/Wrapper";
 import classes from "./RecentRace.module.css";
 

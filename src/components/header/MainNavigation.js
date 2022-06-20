@@ -3,6 +3,7 @@ import logo from "../../images/logo1.jpg";
 import { useState } from "react";
 import NavigationItem from "./NavigationItem";
 import Header from "./Header";
+import UserNavigation from "./UserNavigation";
 
 const navTitles = [
   "Drivers",
@@ -28,6 +29,7 @@ const MainNavigation = () => {
 
   return (
     <>
+    <UserNavigation onHideHeader={hideHeader}/>
       <nav className={classes.nav}>
         <div className={classes.logo}>
           <ul>

@@ -1,14 +1,9 @@
-import { getCurrentYear } from "../helper-variables";
+import { getCurrentYear, setLimit } from "../helper-variables";
 
 const currentYear = getCurrentYear();
 
 export async function getCurrentSchedule(limit) {
-  let limitData;
-  if (limit) {
-    limitData = limit;
-  } else {
-    limitData = 25;
-  }
+  const limitData = setLimit(limit);
   const response = await fetch(
     `http://ergast.com/api/f1/${currentYear}.json?limit=${limitData}`
   );

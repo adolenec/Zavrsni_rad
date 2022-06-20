@@ -1,15 +1,9 @@
-import { getCurrentYear } from "../helper-variables";
+import { getCurrentYear, setLimit } from "../helper-variables";
 
 const currentYear = getCurrentYear();
 
 export async function getCurrentYearData(url, limit) {
-  let limitData;
-  if(limit) {
-    limitData = limit;
-  }
-  else {
-    limitData = 25;
-  }
+  const limitData = setLimit(limit);
   const path =
     url[0].toUpperCase() + url.substring(1, url.length - 1) + "Table";
   const urlFraction = url[0].toUpperCase() + url.substring(1);
@@ -25,8 +19,9 @@ export async function getCurrentYearData(url, limit) {
 }
 
 export async function getCurrentDriversStanding(limit) {
+  const limitData = setLimit(limit);
   const response = await fetch(
-    `http://ergast.com/api/f1/current/driverStandings.json?limit=${limit}`
+    `http://ergast.com/api/f1/current/driverStandings.json?limit=${limitData}`
   );
   const data = await response.json();
 

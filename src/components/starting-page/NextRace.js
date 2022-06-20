@@ -11,7 +11,6 @@ const NextRace = () => {
 
   useEffect(() => {
     getCurrentSchedule().then((data) => {
-      console.log(data);
       let upcomingRaces = [];
       for (const key in data) {
         if (data[key].date >= todayDate) {
@@ -42,10 +41,10 @@ const NextRace = () => {
               <img src={nextRace.image} alt={nextRace.circuitName} />
             </div>
             <div className={classes.location}>
-              <h2>
-                Next Race: {nextRace.country.toUpperCase()}{" "}
+              {nextRace.country && <h2>
+                Next Race: {nextRace.country.toUpperCase()}
                 <i className="fa-solid fa-angle-right"></i>
-              </h2>
+              </h2>}
             </div>
           </div>
         </div>

@@ -52,6 +52,6 @@
 }
 
 .items ul li:hover {
-  background: black;
+  background: rgb(36, 36, 36);
   cursor: pointer;
 }

@@ -9,3 +9,7 @@ export const formatedDate = (date) => {
     year: "numeric",
   });
 };
+
+export const setLimit = (limit) => {
+  return limit ? limit : 25;
+}

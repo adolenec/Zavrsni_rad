@@ -1,5 +1,5 @@
 .header {
-  background: black;
+  background: rgb(36, 36, 36);
   color: white;
   padding: 2% 10%;
   display: flex;
@@ -23,7 +23,7 @@
   color: rgb(180, 34, 34);
   font-size: 1.5rem;
   border: none;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .header .btn button:hover {

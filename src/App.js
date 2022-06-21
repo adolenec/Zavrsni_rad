@@ -11,7 +11,7 @@ function App() {
       <Route path="/starting-page">
         <StartingPage />
       </Route>
-      <Route path="/drivers">
+      <Route path="/drivers" exact>
         <MainNavigation/>
       </Route>
       <Route path="/constructors"></Route>

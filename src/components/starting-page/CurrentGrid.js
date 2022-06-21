@@ -12,13 +12,13 @@ const CurrentGrid = () => {
     getCurrentYearData("drivers", 4).then((data) => setDrivers(data));
   }, []);
 
-  if(drivers.message) {
-    return <div>Couldn't load data</div>
+  if (drivers.message) {
+    return <div>Couldn't load data</div>;
   }
 
   return (
     <Wrapper>
-      <SectionHeader title="Current Grid" />
+      <SectionHeader title="Current Grid" endpoint="drivers" />
       <div className={classes["current-grid"]}>
         {drivers.map((driver) => (
           <CurrentYearItem

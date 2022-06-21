@@ -9,6 +9,7 @@ const HeaderItem = ({ headerData, endpoint }) => {
 
   if (endpoint === "drivers") {
     data = {
+      id: headerData.driverId,
       name: headerData.givenName,
       lastName: headerData.familyName,
       image: driversImages.find((driver) =>
@@ -17,6 +18,7 @@ const HeaderItem = ({ headerData, endpoint }) => {
     };
   } else if (endpoint === "constructors") {
     data = {
+      id: headerData.constructorId,
       name: headerData.name,
       image: constructorsImages.find((constructor) =>
         constructor.includes(headerData.constructorId)
@@ -24,10 +26,12 @@ const HeaderItem = ({ headerData, endpoint }) => {
     };
   } else if (endpoint === "circuits") {
     data = {
+      id: headerData.circuitId,
       name: headerData.circuitName,
     };
   } else if (endpoint === "standings") {
     data = {
+      id: headerData.Driver.driverId,
       name: headerData.Driver.givenName,
       lastName: headerData.Driver.familyName,
       position: headerData.position,
@@ -41,6 +45,7 @@ const HeaderItem = ({ headerData, endpoint }) => {
     const formatedRaceDate = formatedDate(headerData.date);
     if (headerData.date >= todayDate) {
       data = {
+        id: headerData.Circuit.circuitId,
         name: headerData.Circuit.circuitName,
         race: formatedRaceDate,
       };

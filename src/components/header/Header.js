@@ -65,11 +65,6 @@ const Header = (props) => {
           endpoint={props.endpoint}
         />
       ))}
-      <div className={classes.btn}>
-        <button>
-          More Info <i className="fa-solid fa-angle-right"></i>
-        </button>
-      </div>
     </div>
   );
 };

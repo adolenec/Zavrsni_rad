@@ -8,10 +8,15 @@ import classes from "./NextRace.module.css";
 const NextRace = () => {
   const [nextRace, setNextRace] = useState({});
   const todayDate = new Date().toISOString().slice(0, 10);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getCurrentSchedule().then((data) => {
       let upcomingRaces = [];
+      if (data.message) {
+        setError(true);
+        return;
+      }
       for (const key in data) {
         if (data[key].date >= todayDate) {
           upcomingRaces.push({
@@ -29,6 +34,10 @@ const NextRace = () => {
     });
   }, [todayDate]);
 
+  if (error) {
+    return;
+  }
+
   return (
     <div className={classes["next-race"]}>
       <Wrapper>
@@ -41,10 +50,12 @@ const NextRace = () => {
               <img src={nextRace.image} alt={nextRace.circuitName} />
             </div>
             <div className={classes.location}>
-              {nextRace.country && <h2>
-                Next Race: {nextRace.country.toUpperCase()}
-                <i className="fa-solid fa-angle-right"></i>
-              </h2>}
+              {nextRace.country && (
+                <h2>
+                  Next Race: {nextRace.country.toUpperCase()}
+                  <i className="fa-solid fa-angle-right"></i>
+                </h2>
+              )}
             </div>
           </div>
         </div>

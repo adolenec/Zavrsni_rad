@@ -9,7 +9,6 @@ const RecentRace = () => {
 
   useEffect(() => {
     getLastRaceResults(3).then((data) => {
-      console.log(data);
       for (const key in data.results) {
         data.results[key].Driver = {
           ...data.results[key].Driver,
@@ -21,8 +20,6 @@ const RecentRace = () => {
       setRecentRaceData(data);
     });
   }, []);
-
-  console.log(recentRaceData);
 
   if (recentRaceData.message) {
     return (

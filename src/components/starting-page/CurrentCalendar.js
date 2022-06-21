@@ -16,6 +16,10 @@ const CurrentCalendar = () => {
     getCurrentSchedule(4).then((data) => setSchedule(data));
   }, []);
 
+  if (schedule.message) {
+    return <div>Couldn't load data</div>;
+  }
+
   return (
     <Wrapper>
       <SectionHeader title={title} />

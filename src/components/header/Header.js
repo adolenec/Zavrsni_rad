@@ -48,6 +48,14 @@ const Header = (props) => {
     headerData = currentSchedule;
   }
 
+  if (headerData.message) {
+    return (
+      <div className={classes.header} onMouseLeave={props.onHideHeader}>
+        Couldn't load data
+      </div>
+    );
+  }
+
   return (
     <div className={classes.header} onMouseLeave={props.onHideHeader}>
       {headerData.map((data) => (

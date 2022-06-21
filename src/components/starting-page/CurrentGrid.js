@@ -12,6 +12,10 @@ const CurrentGrid = () => {
     getCurrentYearData("drivers", 4).then((data) => setDrivers(data));
   }, []);
 
+  if(drivers.message) {
+    return <div>Couldn't load data</div>
+  }
+
   return (
     <Wrapper>
       <SectionHeader title="Current Grid" />

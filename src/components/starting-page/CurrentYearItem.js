@@ -3,12 +3,14 @@ import { driversImages } from "../../helpers/image-arrays/drivers-images";
 import { driversNationalityImages } from "../../helpers/image-arrays/drivers-nationalities-images";
 import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
 import { formatedDate } from "../../helpers/helper-variables";
+import { Link } from "react-router-dom";
 
 const CurrentYearItem = ({ currentYearData, endpoint }) => {
   let data = currentYearData;
 
   if (endpoint === "drivers") {
     data = {
+      id: data.driverId,
       name: data.givenName,
       lastName: data.familyName,
       number: data.permanentNumber,
@@ -38,28 +40,30 @@ const CurrentYearItem = ({ currentYearData, endpoint }) => {
 
   return (
     <div className={classes.item}>
-      <div className={classes.header}>
-        {data.number && <p>{data.number}</p>}
-        {data.raceName && <p>{data.raceName}</p>}
-      </div>
-      <div className={classes.info}>
-        <div className={classes.names}>
-          {data.name && <p>{data.name}</p>}
-          {data.lastName && <h3>{data.lastName}</h3>}
-          {data.date && <p>{data.date}</p>}
-          {data.round && <p>Round: {data.round}</p>}
+      <Link to={`${endpoint}/${data.id}`}>
+        <div className={classes.header}>
+          {data.number && <p>{data.number}</p>}
+          {data.raceName && <p>{data.raceName}</p>}
         </div>
-        {data.nationalityImage && (
-          <div className={classes["nationality-image"]}>
-            <img src={data.nationalityImage} alt={data.nationality} />
+        <div className={classes.info}>
+          <div className={classes.names}>
+            {data.name && <p>{data.name}</p>}
+            {data.lastName && <h3>{data.lastName}</h3>}
+            {data.date && <p>{data.date}</p>}
+            {data.round && <p>Round: {data.round}</p>}
+          </div>
+          {data.nationalityImage && (
+            <div className={classes["nationality-image"]}>
+              <img src={data.nationalityImage} alt={data.nationality} />
+            </div>
+          )}
+        </div>
+        {data.image && (
+          <div className={classes.image}>
+            <img src={data.image} alt={data.name} />
           </div>
         )}
-      </div>
-      {data.image && (
-        <div className={classes.image}>
-          <img src={data.image} alt={data.name} />
-        </div>
-      )}
+      </Link>
     </div>
   );
 };

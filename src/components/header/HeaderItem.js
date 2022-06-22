@@ -2,6 +2,7 @@ import classes from "./HeaderItem.module.css";
 import { driversImages } from "../../helpers/image-arrays/drivers-images";
 import { constructorsImages } from "../../helpers/image-arrays/constructors-images";
 import { formatedDate } from "../../helpers/helper-variables";
+import { Link } from "react-router-dom";
 
 const HeaderItem = ({ headerData, endpoint }) => {
   let data = [];
@@ -57,27 +58,31 @@ const HeaderItem = ({ headerData, endpoint }) => {
 
   return (
     <div className={classes["header-item"]}>
-      <div className={classes.info}>
-        <div className={classes.about}>
-          {data.image && <img src={data.image} alt={data.name} />}
-          <h3>
-            {data.name} {data.lastName}
-          </h3>
+      <Link to={`/${endpoint}/${data.id}`}>
+        <div className={classes.info}>
+          <div className={classes.about}>
+            {data.image && <img src={data.image} alt={data.name} />}
+            <h3>
+              {data.name} {data.lastName}
+            </h3>
+          </div>
+          <span>
+            <i className="fa-solid fa-angle-right"></i>
+          </span>
         </div>
-        <span>
-          <i className="fa-solid fa-angle-right"></i>
-        </span>
-      </div>
-      <div>
-        <div className={classes["upcoming-races"]}>
-          {data.race && <p>{data.race}</p>}
+        <div>
+          <div className={classes["upcoming-races"]}>
+            {data.race && <p>{data.race}</p>}
+          </div>
+          {data.position && <p>Ranking: {data.position}</p>}
+          {data.points && <p>Points: {data.points}</p>}
         </div>
-        {data.position && <p>Ranking: {data.position}</p>}
-        {data.points && <p>Points: {data.points}</p>}
-      </div>
-      <div className={classes["standings-image"]}>
-        {data.standingsImage && <img src={data.standingsImage} alt="Driver" />}
-      </div>
+        <div className={classes["standings-image"]}>
+          {data.standingsImage && (
+            <img src={data.standingsImage} alt="Driver" />
+          )}
+        </div>
+      </Link>
     </div>
   );
 };

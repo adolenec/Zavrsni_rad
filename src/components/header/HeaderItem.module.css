@@ -8,10 +8,19 @@
   flex-direction: column;
 }
 
+.header-item i {
+  color: rgb(225, 0, 0);
+}
+
 .header-item:hover {
   border-bottom: 1px solid rgb(225, 0, 0);
   cursor: pointer;
   color: rgb(175, 174, 174);
+}
+
+.header-item a {
+  color: white;
+  text-decoration: none;
 }
 
 .info {

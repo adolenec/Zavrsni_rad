@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getLastRaceResults } from "../../helpers/api/api-race-results";
 import { driversImages } from "../../helpers/image-arrays/drivers-images";
 import Wrapper from "../ui/Wrapper";
@@ -94,7 +95,9 @@ const RecentRace = () => {
           </div>
         </div>
         <div className={classes.btn}>
-          <button>Full Results</button>
+          <Link to="last-race-results">
+            <button>Full Results</button>
+          </Link>
         </div>
       </Wrapper>
     </div>

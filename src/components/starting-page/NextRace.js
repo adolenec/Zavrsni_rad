@@ -4,6 +4,7 @@ import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
 import { formatedDate } from "../../helpers/helper-variables";
 import Wrapper from "../ui/Wrapper";
 import classes from "./NextRace.module.css";
+import { Link } from "react-router-dom";
 
 const NextRace = () => {
   const [nextRace, setNextRace] = useState({});
@@ -51,10 +52,12 @@ const NextRace = () => {
             </div>
             <div className={classes.location}>
               {nextRace.country && (
-                <h2>
-                  Next Race: {nextRace.country.toUpperCase()}
-                  <i className="fa-solid fa-angle-right"></i>
-                </h2>
+                <Link to={`/circuits/${nextRace.circuitId}`}>
+                  <h2>
+                    Next Race: {nextRace.country.toUpperCase()}
+                    <i className="fa-solid fa-angle-right"></i>
+                  </h2>
+                </Link>
               )}
             </div>
           </div>

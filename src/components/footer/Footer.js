@@ -1,6 +1,7 @@
 import classes from "./Footer.module.css";
 import Logo from "../../images/logo.png";
 import Wrapper from "../ui/Wrapper";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,10 +9,15 @@ const Footer = () => {
       <Wrapper>
         <div className={classes.footer}>
           <div className={classes.user}>
-            <p>Sign up for full F1 experience and unlock access to many cool features!</p>
-            <button>
-              <i className="fa-regular fa-user"></i> SIGN UP
-            </button>
+            <p>
+              Sign up for full F1 experience and unlock access to many cool
+              features!
+            </p>
+            <Link to="/authentication">
+              <button>
+                <i className="fa-regular fa-user"></i> SIGN UP
+              </button>
+            </Link>
           </div>
           <div className={classes.links}>
             <div className={classes.standings}>

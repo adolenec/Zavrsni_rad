@@ -22,7 +22,7 @@ const CurrentCalendar = () => {
 
   return (
     <Wrapper>
-      <SectionHeader title={title} endpoint="calendar" />
+      <SectionHeader title={title} endpoint="schedule" />
       <div className={classes["current-calendar"]}>
         {schedule.map((race) => (
           <CurrentYearItem

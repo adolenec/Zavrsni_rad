@@ -38,4 +38,10 @@
 
 .location i {
     color: rgb(225,0,0);
+    margin-left: .5rem;
+}
+
+.location a {
+  text-decoration: none;
+  color: #ccc;
 }

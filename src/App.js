@@ -1,6 +1,7 @@
 import StartingPage from "./pages/StartingPage";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MainNavigation from "./components/header/MainNavigation";
+import DriverDetailsPage from "./pages/DriverDetailsPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
       </Route>
       <Route path="/drivers" exact>
         <MainNavigation/>
+      </Route>
+      <Route path="/drivers/:driverId">
+        <DriverDetailsPage/>
       </Route>
       <Route path="/authentication">
         {/* <ImageSlider/> */}

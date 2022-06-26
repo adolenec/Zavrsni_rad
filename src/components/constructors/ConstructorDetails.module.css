@@ -13,12 +13,12 @@
   .main {
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 
   .main .image {
-    width: 40%;
+    width: 30%;
   }
 
   .main .image img {

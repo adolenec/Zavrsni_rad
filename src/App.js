@@ -4,6 +4,7 @@ import MainNavigation from "./components/header/MainNavigation";
 import DriverDetailsPage from "./pages/DriverDetailsPage";
 import ConstructorDetailsPage from "./pages/ConstructorDetailsPage";
 // import ImageSlider from "./components/ui/ImageSlider";
+// import { driversImages } from "./helpers/image-arrays/drivers-images";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <DriverDetailsPage/>
       </Route>
       <Route path="/authentication">
-        {/* <ImageSlider/> */}
+        {/* <ImageSlider imageArray={driversImages} delay={2000}/> */}
       </Route>
       <Route path="/constructors" exact></Route>
       <Route path="/constructors/:constructorId">

@@ -1,7 +1,7 @@
 import StartingPage from "./pages/StartingPage";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MainNavigation from "./components/header/MainNavigation";
-import ImageSlider from "./components/ui/ImageSlider";
+// import ImageSlider from "./components/ui/ImageSlider";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <MainNavigation/>
       </Route>
       <Route path="/authentication">
-        <ImageSlider/>
+        {/* <ImageSlider/> */}
       </Route>
       <Route path="/constructors"></Route>
       <Route path="/circuits"></Route>

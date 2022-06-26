@@ -1,0 +1,19 @@
+.header {
+  background: rgb(36, 36, 36);
+  color: white;
+  padding: 2% 10%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1%;
+  flex-wrap: wrap;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,47 @@
+.next-race {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem 0;
+  border-top: 2px solid rgb(225,0,0);
+}
+
+.info {
+  height: 10rem;
+}
+
+.header {
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+
+.main {
+  height: 80%;
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 0 0;
+}
+
+.main .image {
+  height: 100%;
+}
+
+.main .image img {
+  height: 100%;
+}
+
+.location {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.location i {
+    color: rgb(225,0,0);
+    margin-left: .5rem;
+}
+
+.location a {
+  text-decoration: none;
+  color: #ccc;
+}

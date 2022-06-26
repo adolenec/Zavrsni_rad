@@ -1,0 +1,5 @@
+.current-grid {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: space-between;
+}

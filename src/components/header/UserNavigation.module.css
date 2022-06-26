@@ -1,0 +1,42 @@
+.nav {
+  padding: 0.3rem 15%;
+}
+
+.user ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.user ul button {
+  border: none;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  background: rgb(225, 0, 0);
+  border-radius: 5px;
+  font-size: 0.75rem;
+  border: 2px solid rgb(225, 0, 0);
+}
+
+.user ul button:hover {
+  color: black;
+  background: white;
+  cursor: pointer;
+}
+
+.user ul button i {
+  margin-right: 0.2rem;
+}
+
+.user ul li a {
+  text-decoration: none;
+  color: rgb(94, 94, 94);
+  font-size: 0.9rem;
+}
+
+.user ul li a:hover {
+  color: rgb(225, 0, 0);
+  border-bottom: 2px solid rgb(225, 0, 0);
+}

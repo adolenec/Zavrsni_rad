@@ -1,0 +1,60 @@
+.header-item {
+  width: 23%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.header-item i {
+  color: rgb(225, 0, 0);
+}
+
+.header-item:hover {
+  border-bottom: 1px solid rgb(225, 0, 0);
+  cursor: pointer;
+  color: rgb(175, 174, 174);
+}
+
+.header-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.standings-image {
+  display: flex;
+  justify-content: center;
+}
+
+.standings-image img {
+  width: 70%;
+}
+
+.upcoming-races {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about img {
+  width: 30px;
+  height: 30px;
+}

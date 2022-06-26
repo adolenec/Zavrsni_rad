@@ -1,0 +1,43 @@
+.constructor {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: rgb(240, 240, 240);
+    border-radius: 20px;
+  }
+
+  .name {
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+  }
+
+  .main {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main .image {
+    width: 40%;
+  }
+
+  .main .image img {
+    width: 100%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .info .constructor-information div {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+  }
+
+  .info .constructor-information p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }

@@ -2,6 +2,7 @@ import StartingPage from "./pages/StartingPage";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MainNavigation from "./components/header/MainNavigation";
 import DriverDetailsPage from "./pages/DriverDetailsPage";
+import ConstructorDetailsPage from "./pages/ConstructorDetailsPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 
 function App() {
@@ -22,7 +23,10 @@ function App() {
       <Route path="/authentication">
         {/* <ImageSlider/> */}
       </Route>
-      <Route path="/constructors"></Route>
+      <Route path="/constructors" exact></Route>
+      <Route path="/constructors/:constructorId">
+        <ConstructorDetailsPage/>
+      </Route>
       <Route path="/circuits"></Route>
       <Route path="/standings"></Route>
       <Route path="/schedule"></Route>

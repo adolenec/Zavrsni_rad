@@ -1,5 +1,6 @@
 .container {
-  background: rgb(0, 0, 0, 0.875);
+  /* background: rgb(0, 0, 0, 0.875); */
+  background-image: linear-gradient(170deg, black, rgb(14, 14, 61));
   padding: 2rem 0;
   color: #ccc;
 }

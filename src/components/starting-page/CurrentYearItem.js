@@ -24,7 +24,7 @@ const CurrentYearItem = ({ currentYearData, endpoint }) => {
     };
   }
 
-  if (endpoint === "schedule") {
+  if (endpoint === "circuits") {
     const formatedRaceDate = formatedDate(data.date);
     data = {
       name: data.Circuit.circuitName,

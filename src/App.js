@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import MainNavigation from "./components/header/MainNavigation";
 import DriverDetailsPage from "./pages/DriverDetailsPage";
 import ConstructorDetailsPage from "./pages/ConstructorDetailsPage";
+import CircuitsPage from "./pages/CircuitsPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 // import { driversImages } from "./helpers/image-arrays/drivers-images";
 
@@ -28,7 +29,9 @@ function App() {
       <Route path="/constructors/:constructorId">
         <ConstructorDetailsPage/>
       </Route>
-      <Route path="/circuits"></Route>
+      <Route path="/circuits" exact>
+        <CircuitsPage/>
+      </Route>
       <Route path="/standings"></Route>
       <Route path="/schedule"></Route>
       <Route path="/history"></Route>

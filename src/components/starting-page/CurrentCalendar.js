@@ -22,13 +22,13 @@ const CurrentCalendar = () => {
 
   return (
     <Wrapper>
-      <SectionHeader title={title} endpoint="schedule" />
+      <SectionHeader title={title} endpoint="circuits" />
       <div className={classes["current-calendar"]}>
         {schedule.map((race) => (
           <CurrentYearItem
             key={race.Circuit.circuitId}
             currentYearData={race}
-            endpoint="schedule"
+            endpoint="circuits"
           />
         ))}
       </div>

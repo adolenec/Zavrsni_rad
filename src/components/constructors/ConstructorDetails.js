@@ -14,10 +14,22 @@ const ConstructorDetails = () => {
     );
   }, [params.constructorId]);
 
+  console.log(constructor);
+
   return (
     <div className={classes.constructor}>
-      <div className={classes.name}>
-        {constructor.name && <h1>{constructor.name}</h1>}
+      <div className={classes.header}>
+        <div className={classes.name}>
+          {constructor.name && <h1>{constructor.name}</h1>}
+        </div>
+        <div className={classes["nationality-image"]}>
+          {constructor.nationalityImage && (
+            <img
+              src={constructor.nationalityImage}
+              alt={constructor.nationality}
+            />
+          )}
+        </div>
       </div>
       <div className={classes.main}>
         <div className={classes.image}>

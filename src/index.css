@@ -9,3 +9,7 @@
 html {
   font-family: "Noto Sans JP", sans-serif;
 }
+
+body {
+  background: rgb(224, 224, 224);
+}

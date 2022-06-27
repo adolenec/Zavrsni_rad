@@ -5,8 +5,24 @@
     border-radius: 20px;
   }
 
-  .name {
+  .header {
     border-bottom: 1px solid black;
+    height: 7rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nationality-image {
+    height: 100%;
+  }
+  
+  .nationality-image img {
+    height: 100%;
+  }
+
+  .name {
     padding: 1rem 0;
   }
 
@@ -31,10 +47,14 @@
     gap: 4rem;
   }
 
+  .info .constructor-information h1 {
+    margin-bottom: 1.5rem;
+  }
+
   .info .constructor-information div {
     display: flex;
     align-items: center;
-    gap: .2rem;
+    justify-content: space-between;
   }
 
   .info .constructor-information p {

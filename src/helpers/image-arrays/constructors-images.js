@@ -4,7 +4,7 @@ import alpine from "../../images/constructors/alpine.png";
 import aston_martin from "../../images/constructors/aston_martin.png";
 import ferrari from "../../images/constructors/ferrari.png";
 import haas from "../../images/constructors/haas.png";
-import mclaren from "../../images/constructors/mclaren.png";
+import mclaren from "../../images/constructors/mclaren.svg";
 import mercedes from "../../images/constructors/mercedes.png";
 import red_bull from "../../images/constructors/red_bull.png";
 import williams from "../../images/constructors/williams.png";

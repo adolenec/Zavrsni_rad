@@ -13,7 +13,7 @@ const CurrentCalendar = () => {
   const title = `${currentYear} Calendar`;
 
   useEffect(() => {
-    getCurrentSchedule(4).then((data) => setSchedule(data));
+    getCurrentSchedule(5).then((data) => setSchedule(data));
   }, []);
 
   if (schedule.message) {

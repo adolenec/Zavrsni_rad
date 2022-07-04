@@ -1,5 +1,6 @@
 import { getCurrentYear, setLimit } from "../helper-variables";
 import { circuitsImages } from "../image-arrays/circuits-images";
+import { circuitsNationalitiesImages } from "../image-arrays/circuits-nationalities-images";
 
 const currentYear = getCurrentYear();
 
@@ -43,11 +44,14 @@ export async function getCircuitDetails(id) {
       image: circuitsImages.find((image) =>
         image.includes(data.MRData.CircuitTable.Circuits[0].circuitId)
       ),
+      nationalityImage: circuitsNationalitiesImages.find((image) =>
+        image.includes(data.MRData.CircuitTable.Circuits[0].Location.country)
+      ),
     };
   } catch (err) {
     circuitDetails = {
-      message: err.message
-    }
+      message: err.message,
+    };
   }
 
   return circuitDetails;

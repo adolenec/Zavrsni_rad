@@ -21,6 +21,9 @@ const RaceDetails = () => {
     <div className={classes.race}>
       <div className={classes.header}>
         <h1>{raceDetails.name}</h1>
+        <div className={classes['nationality-image']}>
+            <img src={raceDetails.nationalityImage} alt={raceDetails.cuntry}/>
+        </div>
       </div>
       <div className={classes.main}>
         <div className={classes.image}>

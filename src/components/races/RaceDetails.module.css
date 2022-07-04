@@ -14,6 +14,14 @@
   border-bottom: 1px solid black;
 }
 
+.nationality-image {
+    height: 100%;
+  }
+  
+  .nationality-image img {
+    height: 100%;
+  }
+
 .main .image {
   width: 50%;
   padding: 2rem;

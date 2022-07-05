@@ -5,6 +5,7 @@ import DriverDetailsPage from "./pages/DriverDetailsPage";
 import ConstructorDetailsPage from "./pages/ConstructorDetailsPage";
 import CircuitsPage from "./pages/CircuitsPage";
 import RaceDetailsPage from "./pages/RaceDetailsPage";
+import DriversPage from "./pages/DriversPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 // import { driversImages } from "./helpers/image-arrays/drivers-images";
 
@@ -18,7 +19,7 @@ function App() {
         <StartingPage />
       </Route>
       <Route path="/drivers" exact>
-        <MainNavigation/>
+        <DriversPage/>
       </Route>
       <Route path="/drivers/:driverId">
         <DriverDetailsPage/>

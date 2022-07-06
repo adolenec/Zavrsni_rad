@@ -1,5 +1,8 @@
 import { constructorsImages } from "../image-arrays/constructors-images";
 import { constructorsNationalityImages } from "../image-arrays/constructors-nationalities-images";
+import { constructorColor, getCurrentYear } from "../helper-variables";
+
+const currentYear = getCurrentYear();
 
 export async function getConstructorDetails(id) {
   let constructorDetails;
@@ -25,6 +28,7 @@ export async function getConstructorDetails(id) {
           data.MRData.ConstructorTable.Constructors[0].constructorId
         )
       ),
+      color: constructorColor(data.MRData.ConstructorTable.Constructors[0].constructorId)
     };
   } catch (err) {
     constructorDetails = {
@@ -66,4 +70,26 @@ export async function getSpecificConstructorStanding(id) {
   }
 
   return constructorStanding;
+}
+
+export async function getConstructors() {
+  let constructors;
+  try {
+    const response = await fetch(
+      `http://ergast.com/api/f1/${currentYear}/constructors.json`
+    );
+    if (!response.ok) {
+      throw new Error("Couldn't load data");
+    }
+
+    const data = await response.json();
+
+    constructors = data.MRData.ConstructorTable.Constructors;
+  } catch (err) {
+    constructors = {
+      message: err.message,
+    };
+  }
+
+  return constructors;
 }

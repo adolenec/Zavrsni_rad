@@ -24,6 +24,14 @@
 
   .name {
     padding: 1rem 0;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .color {
+    width: .4rem;
+    height: 2.5rem;
   }
 
   .main {

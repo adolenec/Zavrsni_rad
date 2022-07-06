@@ -8,7 +8,6 @@ import CurrentYearItem from "../starting-page/CurrentYearItem";
 
 const Drivers = () => {
   const [drivers, setDrivers] = useState([]);
-  let data;
 
   useEffect(() => {
     getCurrentYearData("drivers").then((data) => {

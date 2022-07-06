@@ -1,11 +1,11 @@
 import StartingPage from "./pages/StartingPage";
 import { Route, Switch, Redirect } from "react-router-dom";
-import MainNavigation from "./components/header/MainNavigation";
 import DriverDetailsPage from "./pages/DriverDetailsPage";
 import ConstructorDetailsPage from "./pages/ConstructorDetailsPage";
 import CircuitsPage from "./pages/CircuitsPage";
 import RaceDetailsPage from "./pages/RaceDetailsPage";
 import DriversPage from "./pages/DriversPage";
+import ConstructorsPage from "./pages/ConstructorsPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 // import { driversImages } from "./helpers/image-arrays/drivers-images";
 
@@ -28,7 +28,7 @@ function App() {
         {/* <ImageSlider imageArray={driversImages} delay={2000}/> */}
       </Route>
       <Route path="/constructors" exact>
-        <MainNavigation/>
+        <ConstructorsPage/>
       </Route>
       <Route path="/constructors/:constructorId">
         <ConstructorDetailsPage/>

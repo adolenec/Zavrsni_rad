@@ -20,6 +20,7 @@ const ConstructorDetails = () => {
     <div className={classes.constructor}>
       <div className={classes.header}>
         <div className={classes.name}>
+          <div className={classes.color} style={{backgroundColor: constructor.color}}></div>
           {constructor.name && <h1>{constructor.name}</h1>}
         </div>
         <div className={classes["nationality-image"]}>

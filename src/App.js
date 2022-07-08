@@ -6,6 +6,7 @@ import CircuitsPage from "./pages/CircuitsPage";
 import RaceDetailsPage from "./pages/RaceDetailsPage";
 import DriversPage from "./pages/DriversPage";
 import ConstructorsPage from "./pages/ConstructorsPage";
+import LastRacePage from "./pages/LastRacePage";
 // import ImageSlider from "./components/ui/ImageSlider";
 // import { driversImages } from "./helpers/image-arrays/drivers-images";
 
@@ -38,6 +39,9 @@ function App() {
       </Route>
       <Route path="/circuits/:circuitId">
         <RaceDetailsPage/>
+      </Route>
+      <Route path="/last-race-results">
+        <LastRacePage/>
       </Route>
       <Route path="/standings"></Route>
       <Route path="/schedule"></Route>

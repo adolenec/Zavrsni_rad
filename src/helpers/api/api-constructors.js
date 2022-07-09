@@ -1,6 +1,6 @@
 import { constructorsImages } from "../image-arrays/constructors-images";
 import { constructorsNationalityImages } from "../image-arrays/constructors-nationalities-images";
-import { constructorColor, getCurrentYear } from "../helper-variables";
+import { constructorColor, getCurrentYear, setLimit } from "../helper-variables";
 
 const currentYear = getCurrentYear();
 
@@ -92,4 +92,26 @@ export async function getConstructors() {
   }
 
   return constructors;
+}
+
+export async function getCurrentConstructorStandings(limit) {
+  const limitData = setLimit(limit);
+  let currentConstructorStanding;
+  try {
+    const response = await fetch(
+      `http://ergast.com/api/f1/current/constructorStandings.json?limit=${limitData}`
+    );
+    if (!response.ok) {
+      throw new Error("Couldn't load data");
+    }
+    const data = await response.json();
+    currentConstructorStanding =
+      data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+  } catch (err) {
+    currentConstructorStanding = {
+      message: err.message,
+    };
+  }
+
+  return currentConstructorStanding;
 }

@@ -7,7 +7,6 @@ import {
 } from "../../../helpers/helper-variables";
 import { constructorsImages } from "../../../helpers/image-arrays/constructors-images";
 import { driversImages } from "../../../helpers/image-arrays/drivers-images";
-import { driversNationalityImages } from "../../../helpers/image-arrays/drivers-nationalities-images";
 import ResultsItem from "../ResultsItem";
 import classes from "./DriverStandings.module.css";
 
@@ -29,9 +28,9 @@ const DriverStandings = () => {
           image: driversImages.find((image) =>
             image.includes(data[key].Driver.familyName)
           ),
-          nationalityImage: driversNationalityImages.find((image) =>
-            image.includes(data[key].Driver.nationality)
-          ),
+        //   nationalityImage: driversNationalityImages.find((image) =>
+        //     image.includes(data[key].Driver.nationality)
+        //   ),
           constructorImage: constructorsImages.find((image) =>
             image.includes(data[key].Constructors[0].constructorId)
           ),
@@ -49,14 +48,14 @@ const DriverStandings = () => {
       <div className={classes.header} onClick={toggleStanding}>
         <h1>
           {getCurrentYear()} Driver Standings{" "}
-          {!showStanding && <i className="fa-solid fa-angle-down"></i>}
-          {showStanding && <i className="fa-solid fa-angle-up"></i>}
+          {showStanding && <i className="fa-solid fa-angle-down"></i>}
+          {!showStanding && <i className="fa-solid fa-angle-up"></i>}
         </h1>
       </div>
       {showStanding && (
         <div className={classes["driver-standings"]}>
           {driverStanding.map((driver) => (
-            <ResultsItem driverInfo={driver} key={driver.driverId} />
+            <ResultsItem info={driver} key={driver.driverId} />
           ))}
         </div>
       )}

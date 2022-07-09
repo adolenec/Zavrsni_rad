@@ -34,13 +34,23 @@
   height: 100%;
 }
 
+.constructor-nationality-image {
+  height: 100%;
+  width: 15%;
+}
+
+.constructor-nationality-image img {
+  height: 100%;
+  width: 100%;
+}
+
 .right {
   padding: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .constructor-image {

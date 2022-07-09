@@ -5,7 +5,7 @@ import { constructorColor } from "../../helpers/helper-variables";
 import { constructorsImages } from "../../helpers/image-arrays/constructors-images";
 import { driversImages } from "../../helpers/image-arrays/drivers-images";
 import classes from "./LastRaceResults.module.css";
-import LastRaceResultsItem from "./LastRaceResultsItem";
+import ResultsItem from "./ResultsItem";
 
 const LastRaceResults = () => {
   const [circuit, setCircuit] = useState({});
@@ -59,7 +59,7 @@ const LastRaceResults = () => {
       </div>
       <div className={classes.results}>
         {standings.map((item) => (
-          <LastRaceResultsItem key={item.driverId} driverInfo={item} />
+          <ResultsItem key={item.driverId} driverInfo={item} />
         ))}
       </div>
     </>

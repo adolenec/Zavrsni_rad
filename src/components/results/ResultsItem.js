@@ -1,4 +1,4 @@
-import classes from "./LastRaceResultsItem.module.css";
+import classes from "./ResultsItem.module.css";
 
 const LastRaceResultsItem = ({ driverInfo }) => {
   const firstItemClasses =
@@ -15,7 +15,7 @@ const LastRaceResultsItem = ({ driverInfo }) => {
         </div>
         <div className={classes.names}>
           <h3>{driverInfo.givenName}</h3>
-          <h1 style={{ color: driverInfo.color }}>
+          <h1>
             {driverInfo.familyName.toUpperCase()}
           </h1>
         </div>
@@ -25,10 +25,11 @@ const LastRaceResultsItem = ({ driverInfo }) => {
           className={classes["constructor-image"]}
           style={{ background: driverInfo.color }}
         >
-          <img src={driverInfo.constructorImage} alt={driverInfo.constructor} />
+          <img src={driverInfo.constructorImage} alt={driverInfo.constructorId} />
         </div>
-        <div className={classes.number} style={{ color: driverInfo.color }}>
-          <h1>{driverInfo.permanentNumber}</h1>
+        <div className={classes.number} style={{ color: !driverInfo.points && driverInfo.color }}>
+          {!driverInfo.points && <h1>{driverInfo.permanentNumber}</h1>}
+          {driverInfo.points && <h1>{driverInfo.points}</h1>}
         </div>
       </div>
     </div>

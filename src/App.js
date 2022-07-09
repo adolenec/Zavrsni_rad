@@ -7,6 +7,7 @@ import RaceDetailsPage from "./pages/RaceDetailsPage";
 import DriversPage from "./pages/DriversPage";
 import ConstructorsPage from "./pages/ConstructorsPage";
 import LastRacePage from "./pages/LastRacePage";
+import StandingsPage from "./pages/StandingsPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 // import { driversImages } from "./helpers/image-arrays/drivers-images";
 
@@ -43,7 +44,9 @@ function App() {
       <Route path="/last-race-results">
         <LastRacePage/>
       </Route>
-      <Route path="/standings"></Route>
+      <Route path="/standings">
+        <StandingsPage/>
+      </Route>
       <Route path="/schedule"></Route>
       <Route path="/history"></Route>
     </Switch>

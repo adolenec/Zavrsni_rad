@@ -11,7 +11,7 @@ import { constructorsNationalityImages } from "../../../helpers/image-arrays/con
 
 const ConstructorStandings = () => {
   const [constructorStanding, setConstructorStanding] = useState([]);
-  const [showStanding, setShowStanding] = useState(true);
+  const [showStanding, setShowStanding] = useState(false);
 
   const toggleStanding = () => {
     setShowStanding((prevState) => !prevState);

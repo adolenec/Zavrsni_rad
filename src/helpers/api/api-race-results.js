@@ -12,7 +12,6 @@ export async function getLastRaceResults(limit) {
       throw new Error("Something went wrong");
     }
     const data = await response.json();
-    console.log(data);
     raceData = {
       name: data.MRData.RaceTable.Races[0].Circuit.circuitName,
       circuitId: data.MRData.RaceTable.Races[0].Circuit.circuitId,

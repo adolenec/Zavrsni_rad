@@ -40,8 +40,6 @@ const LastRaceResults = () => {
     });
   }, []);
 
-  console.log(standings);
-
   if (!circuit) {
     return;
   }
@@ -59,7 +57,7 @@ const LastRaceResults = () => {
       </div>
       <div className={classes.results}>
         {standings.map((item) => (
-          <ResultsItem key={item.driverId} driverInfo={item} />
+          <ResultsItem key={item.driverId} info={item} />
         ))}
       </div>
     </>

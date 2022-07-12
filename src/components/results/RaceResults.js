@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { getLastRaceResults } from "../../helpers/api/api-race-results";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getRaceResults } from "../../helpers/api/api-race-results";
+import classes from "./RaceResults.module.css";
 import { constructorColor } from "../../helpers/helper-variables";
 import { constructorsImages } from "../../helpers/image-arrays/constructors-images";
 import { driversImages } from "../../helpers/image-arrays/drivers-images";
-import classes from "./LastRaceResults.module.css";
 import ResultsItem from "./ResultsItem";
 
-const LastRaceResults = () => {
+const RaceResults = () => {
+  const params = useParams();
   const [circuit, setCircuit] = useState({});
   const [standings, setStandings] = useState([]);
 
   useEffect(() => {
     let driversArray = [];
-    getLastRaceResults().then((data) => {
-      console.log(data);
+    getRaceResults(params.round).then((data) => {
       setCircuit({
         circuitId: data.circuitId,
         circuitImage: data.circuitImage,
@@ -38,7 +38,7 @@ const LastRaceResults = () => {
       }
       setStandings(driversArray);
     });
-  }, []);
+  }, [params.round]);
 
   if (!circuit) {
     return;
@@ -64,4 +64,4 @@ const LastRaceResults = () => {
   );
 };
 
-export default LastRaceResults;
+export default RaceResults;

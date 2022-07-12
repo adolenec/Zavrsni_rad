@@ -95,7 +95,7 @@ const RecentRace = () => {
           </div>
         </div>
         <div className={classes.btn}>
-          <Link to="last-race-results">
+          <Link to={`/results/${recentRaceData.round}`}>
             <button>Full Results</button>
           </Link>
         </div>

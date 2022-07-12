@@ -1,18 +1,18 @@
 import Footer from "../components/footer/Footer";
 import MainNavigation from "../components/header/MainNavigation";
-import LastRaceResults from "../components/results/LastRaceResults";
+import RaceResults from "../components/results/RaceResults";
 import Wrapper from "../components/ui/Wrapper";
 
-const LastRacePage = () => {
+const RaceResultsPage = () => {
   return (
     <>
       <MainNavigation />
       <Wrapper>
-        <LastRaceResults/>
+        <RaceResults/>
       </Wrapper>
       <Footer />
     </>
   );
 };
 
-export default LastRacePage;
+export default RaceResultsPage;

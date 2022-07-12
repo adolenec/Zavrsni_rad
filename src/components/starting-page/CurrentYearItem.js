@@ -72,7 +72,7 @@ const CurrentYearItem = ({ currentYearData, endpoint }) => {
       </Link>
       {data.isPrevious && (
         <div className={classes["results-btn"]}>
-          <button>See results</button>
+          <Link to={`/results/${data.round}`}><button>See results</button></Link>
         </div>
       )}
     </div>

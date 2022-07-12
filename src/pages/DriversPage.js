@@ -4,15 +4,15 @@ import MainNavigation from "../components/header/MainNavigation";
 import Wrapper from "../components/ui/Wrapper";
 
 const DriversPage = () => {
-    return (
-        <>
-            <MainNavigation/>
-            <Wrapper>
-                <Drivers/>
-            </Wrapper>
-            <Footer/>
-        </>
-    )
-}
+  return (
+    <>
+      <MainNavigation />
+      <Wrapper>
+        <Drivers />
+      </Wrapper>
+      <Footer />
+    </>
+  );
+};
 
 export default DriversPage;

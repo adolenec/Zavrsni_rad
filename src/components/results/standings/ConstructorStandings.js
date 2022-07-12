@@ -20,7 +20,6 @@ const ConstructorStandings = () => {
   useEffect(() => {
     let constructorsArray = [];
     getCurrentConstructorStandings().then((data) => {
-      console.log(data);
       for (const key in data) {
         constructorsArray.push({
           ...data[key].Constructor,
@@ -39,8 +38,6 @@ const ConstructorStandings = () => {
       setConstructorStanding(constructorsArray);
     });
   }, []);
-
-  console.log(constructorStanding);
 
   return (
     <>

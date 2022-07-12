@@ -1,0 +1,14 @@
+.title {
+  border-bottom: 5px solid rgb(58, 58, 70);
+  border-right: 5px solid rgb(58, 58, 70);
+  border-bottom-right-radius: 20px;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.previous-races {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  justify-content: space-between;
+}

@@ -15,14 +15,12 @@ const RaceDetails = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(raceDetails);
-
   return (
     <div className={classes.race}>
       <div className={classes.header}>
         <h1>{raceDetails.name}</h1>
-        <div className={classes['nationality-image']}>
-            <img src={raceDetails.nationalityImage} alt={raceDetails.cuntry}/>
+        <div className={classes["nationality-image"]}>
+          <img src={raceDetails.nationalityImage} alt={raceDetails.cuntry} />
         </div>
       </div>
       <div className={classes.main}>
@@ -31,9 +29,15 @@ const RaceDetails = () => {
         </div>
         <div className={classes.info}>
           <h1>Race Information</h1>
-          <div>Circuit name: <p> {raceDetails.name}</p></div>
-          <div>Country: <p>{raceDetails.country} </p></div>
-          <div>Locality: <p>{raceDetails.locality} </p></div>
+          <div>
+            Circuit name: <p> {raceDetails.name}</p>
+          </div>
+          <div>
+            Country: <p>{raceDetails.country} </p>
+          </div>
+          <div>
+            Locality: <p>{raceDetails.locality} </p>
+          </div>
         </div>
       </div>
     </div>

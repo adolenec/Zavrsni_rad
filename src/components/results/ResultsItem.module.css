@@ -81,5 +81,9 @@
 }
 
 .first {
-  background: rgb(157, 221, 144);
+  background: rgba(230, 213, 213, 0.75);
+}
+
+.first .left > h2 {
+  background: rgb(163, 65, 65);
 }

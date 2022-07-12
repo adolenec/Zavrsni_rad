@@ -9,6 +9,7 @@
   position: relative;
   margin-top: 1rem;
   transition: all 0.4s;
+  overflow: hidden;
 }
 
 .item a {
@@ -17,17 +18,25 @@
 }
 
 .item:hover {
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(41, 41, 41);
   cursor: pointer;
   top: -0.5rem;
 }
 
 .item:hover a {
-  color: rgb(204, 203, 209);
+  color: white;
+  font-weight: bold;
 }
 
-.item:hover .header, .item:hover .info {
+.item:hover .header,
+.item:hover .info {
   border-bottom: 1px solid rgb(204, 203, 209);
+}
+
+.item:hover .results-btn button {
+  border-bottom: 2.5px solid white;
+  border-right: 2.5px solid white;
+  color: white;
 }
 
 .item .image {
@@ -65,4 +74,26 @@
 
 .names p {
   font-size: 0.9rem;
+}
+
+.results-btn {
+  margin: 1rem 0.5rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.results-btn button {
+  padding: 0.4rem 0.5rem;
+  color: black;
+  font-weight: bold;
+  border: none;
+  background: none;
+  border-bottom: 2.5px solid black;
+  border-right: 2.5px solid black;
+  border-bottom-right-radius: 5px;
+  font-size: 1rem;
+}
+
+.results-btn button:hover {
+  cursor: pointer;
 }

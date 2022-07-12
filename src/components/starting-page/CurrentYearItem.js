@@ -4,9 +4,11 @@ import { driversNationalityImages } from "../../helpers/image-arrays/drivers-nat
 import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
 import { formatedDate } from "../../helpers/helper-variables";
 import { Link } from "react-router-dom";
+import chequeredFlag from "../../images/chequered.png";
 
 const CurrentYearItem = ({ currentYearData, endpoint }) => {
   let data = currentYearData;
+  const todayDate = new Date().toISOString().slice(0, 10);
 
   if (endpoint === "drivers") {
     data = {
@@ -35,11 +37,15 @@ const CurrentYearItem = ({ currentYearData, endpoint }) => {
       image: circuitsImages.find((circuit) =>
         circuit.includes(data.Circuit.circuitId)
       ),
+      isPrevious: data.date < todayDate ? true : false,
     };
   }
 
   return (
-    <div className={classes.item}>
+    <div
+      className={classes.item}
+      style={{ backgroundImage: data.isPrevious && `url(${chequeredFlag})` }}
+    >
       <Link to={`${endpoint}/${data.id}`}>
         <div className={classes.header}>
           {data.number && <p>{data.number}</p>}
@@ -64,6 +70,11 @@ const CurrentYearItem = ({ currentYearData, endpoint }) => {
           </div>
         )}
       </Link>
+      {data.isPrevious && (
+        <div className={classes["results-btn"]}>
+          <button>See results</button>
+        </div>
+      )}
     </div>
   );
 };

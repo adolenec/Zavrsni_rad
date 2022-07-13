@@ -11,10 +11,14 @@ const RaceResults = () => {
   const params = useParams();
   const [circuit, setCircuit] = useState({});
   const [standings, setStandings] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     let driversArray = [];
     getRaceResults(params.round).then((data) => {
+      if(data.message) {
+        setError(true);
+      }
       setCircuit({
         circuitId: data.circuitId,
         circuitImage: data.circuitImage,
@@ -40,8 +44,8 @@ const RaceResults = () => {
     });
   }, [params.round]);
 
-  if (!circuit) {
-    return;
+  if (error) {
+    return <div>Couldn't load data</div>
   }
 
   return (

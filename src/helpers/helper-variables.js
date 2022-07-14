@@ -10,46 +10,54 @@ export const formatedDate = (date) => {
   });
 };
 
+export const formatedTime = (time) => {
+  return time.toLocaleTimeString({
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+};
+
 export const setLimit = (limit) => {
   return limit ? limit : 25;
-}
+};
 
 export const constructorColor = (constructorId) => {
   let color;
   switch (constructorId) {
-    case 'mercedes':
-      color = '#6CD3BF';
+    case "mercedes":
+      color = "#6CD3BF";
       break;
-    case 'ferrari':
-      color = '#ED1C24';
+    case "ferrari":
+      color = "#ED1C24";
       break;
-    case 'red_bull':
-      color = '#1E5BC6';
+    case "red_bull":
+      color = "#1E5BC6";
       break;
-    case 'alpine':
-      color = '#2293D1';
+    case "alpine":
+      color = "#2293D1";
       break;
-    case 'haas':
-      color = '#B6BABD';
+    case "haas":
+      color = "#B6BABD";
       break;
-    case 'aston_martin':
-      color = '#2D826D';
+    case "aston_martin":
+      color = "#2D826D";
       break;
-    case 'alphatauri':
-      color = '#4E7C9B';
+    case "alphatauri":
+      color = "#4E7C9B";
       break;
-    case 'mclaren':
-      color = '#F58020';
+    case "mclaren":
+      color = "#F58020";
       break;
-    case 'alfa':
-      color = '#B12039';
+    case "alfa":
+      color = "#B12039";
       break;
-    case 'williams':
-      color = '#37BEDD';
+    case "williams":
+      color = "#37BEDD";
       break;
     default:
-      color = 'lightgray';
+      color = "lightgray";
   }
 
   return color;
-}
+};

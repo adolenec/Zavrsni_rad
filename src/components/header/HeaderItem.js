@@ -69,9 +69,9 @@ const HeaderItem = ({ headerData, endpoint }) => {
         <div className={classes.info}>
           <div className={classes.about}>
             {data.image && <img src={data.image} alt={data.name} />}
-            <h3>
+            <h4>
               {data.name} {data.lastName}
-            </h3>
+            </h4>
           </div>
           <span>
             <i className="fa-solid fa-angle-right"></i>

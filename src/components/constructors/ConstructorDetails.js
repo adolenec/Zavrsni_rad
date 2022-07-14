@@ -14,37 +14,39 @@ const ConstructorDetails = () => {
     );
   }, [params.constructorId]);
 
-  console.log(constructor);
+  if (Object.keys(constructor).length === 0) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={classes.constructor}>
       <div className={classes.header}>
         <div className={classes.name}>
-          <div className={classes.color} style={{backgroundColor: constructor.color}}></div>
-          {constructor.name && <h1>{constructor.name}</h1>}
+          <div
+            className={classes.color}
+            style={{ backgroundColor: constructor.color }}
+          ></div>
+          <h1>{constructor.name}</h1>
         </div>
         <div className={classes["nationality-image"]}>
-          {constructor.nationalityImage && (
-            <img
-              src={constructor.nationalityImage}
-              alt={constructor.nationality}
-            />
-          )}
+          <img
+            src={constructor.nationalityImage}
+            alt={constructor.nationality}
+          />
         </div>
       </div>
       <div className={classes.main}>
         <div className={classes.image}>
-          {constructor.constructorImage && (
-            <img src={constructor.constructorImage} alt={constructor.id} />
-          )}
+          <img src={constructor.constructorImage} alt={constructor.id} />
         </div>
         <div className={classes.info}>
           <div className={classes["constructor-information"]}>
             <h1>Constructor Information</h1>
-            <div>Name: {constructor.name && <p>{constructor.name}</p>}</div>
             <div>
-              Team Nationality:{" "}
-              {constructor.nationality && <p> {constructor.nationality}</p>}
+              Name: <p>{constructor.name}</p>
+            </div>
+            <div>
+              Team Nationality: <p> {constructor.nationality}</p>
             </div>
           </div>
           <ConstructorStandingDetails />

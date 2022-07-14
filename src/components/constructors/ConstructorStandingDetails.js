@@ -17,15 +17,14 @@ const ConstructorStandingDetails = () => {
     <div className={classes.standing}>
       <h1>Last Season Results</h1>
       <div>
-        Points:{" "}
-        {constructorResults.points && <p>{constructorResults.points}</p>}
+        Points: <p>{constructorResults.points}</p>
       </div>
       <div>
         Position:
-        {constructorResults.position && <p> {constructorResults.position}</p>}
+        <p> {constructorResults.position}</p>
       </div>
       <div>
-        Wins: {constructorResults.wins && <p>{constructorResults.wins}</p>}
+        Wins: <p>{constructorResults.wins}</p>
       </div>
     </div>
   );

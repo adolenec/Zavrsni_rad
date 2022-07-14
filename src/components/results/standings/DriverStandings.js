@@ -28,9 +28,6 @@ const DriverStandings = () => {
           image: driversImages.find((image) =>
             image.includes(data[key].Driver.familyName)
           ),
-        //   nationalityImage: driversNationalityImages.find((image) =>
-        //     image.includes(data[key].Driver.nationality)
-        //   ),
           constructorImage: constructorsImages.find((image) =>
             image.includes(data[key].Constructors[0].constructorId)
           ),

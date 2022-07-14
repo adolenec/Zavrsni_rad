@@ -101,7 +101,7 @@ const Schedule = () => {
         {upcomingRaces.map((race) => (
           <CurrentYearItem
             currentYearData={race}
-            endpoint="schedule"
+            endpoint="circuits"
             key={race.Circuit.circuitId}
           />
         ))}

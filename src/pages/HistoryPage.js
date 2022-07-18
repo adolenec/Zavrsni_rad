@@ -1,9 +1,14 @@
 import MainNavigation from "../components/header/MainNavigation";
+import HistoryHeader from "../components/history/HistoryHeader";
 
 const HistoryPage = () => {
-    return (
-        <MainNavigation/>
-    )
-}
+
+  return (
+    <>
+      <MainNavigation />
+      <HistoryHeader/>
+    </>
+  );
+};
 
 export default HistoryPage;

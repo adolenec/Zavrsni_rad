@@ -9,6 +9,7 @@ import ConstructorsPage from "./pages/ConstructorsPage";
 import StandingsPage from "./pages/StandingsPage";
 import SchedulePage from "./pages/SchedulePage";
 import RaceResultsPage from "./pages/RaceResultsPage";
+import HistoryPage from "./pages/HistoryPage";
 // import ImageSlider from "./components/ui/ImageSlider";
 // import { driversImages } from "./helpers/image-arrays/drivers-images";
 
@@ -51,7 +52,9 @@ function App() {
       <Route path="/schedule">
         <SchedulePage/>
       </Route>
-      <Route path="/history"></Route>
+      <Route path="/history">
+        <HistoryPage/>
+      </Route>
     </Switch>
   );
 }

@@ -56,15 +56,22 @@ const HeaderItem = ({ headerData, endpoint }) => {
     }
   }
 
+  const linkEndpoint =
+    endpoint === "standings"
+      ? "drivers"
+      : endpoint === "schedule"
+      ? "circuits"
+      : endpoint;
+
   return (
     <div className={classes["header-item"]}>
-      <Link to={`/${endpoint}/${data.id}`}>
+      <Link to={`/${linkEndpoint}/${data.id}`}>
         <div className={classes.info}>
           <div className={classes.about}>
             {data.image && <img src={data.image} alt={data.name} />}
-            <h3>
+            <h4>
               {data.name} {data.lastName}
-            </h3>
+            </h4>
           </div>
           <span>
             <i className="fa-solid fa-angle-right"></i>

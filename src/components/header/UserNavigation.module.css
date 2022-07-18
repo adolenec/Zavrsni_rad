@@ -1,5 +1,6 @@
 .nav {
   padding: 0.3rem 15%;
+  background: white;
 }
 
 .user ul {
@@ -34,6 +35,7 @@
   text-decoration: none;
   color: rgb(94, 94, 94);
   font-size: 0.9rem;
+  height: 100%;
 }
 
 .user ul li a:hover {

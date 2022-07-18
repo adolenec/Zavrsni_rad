@@ -30,72 +30,59 @@ const RecentRace = () => {
     );
   }
 
+  if (Object.keys(recentRaceData).length === 0) {
+    return;
+  }
+
   return (
     <div className={classes.container}>
       <Wrapper>
         <div className={classes.header}>
           <div className={classes["header-info"]}>
-            {recentRaceData && <h1>{recentRaceData.name}</h1>}
-            {recentRaceData && <h1>{recentRaceData.country}</h1>}
+            <h1>{recentRaceData.name}</h1>
+            <h1>{recentRaceData.country}</h1>
           </div>
           <div className={classes.image}>
-            {recentRaceData && (
-              <img
-                src={recentRaceData.circuitImage}
-                alt={recentRaceData.name}
-              />
-            )}
+            <img src={recentRaceData.circuitImage} alt={recentRaceData.name} />
           </div>
         </div>
         <div className={classes.drivers}>
           <div className={classes.second}>
             <h2>2nd Place</h2>
-            {recentRaceData.results && (
-              <img
-                src={recentRaceData.results[1].Driver.image}
-                alt={recentRaceData.results[1].Driver.familyName}
-              />
-            )}
-            {recentRaceData.results && (
-              <h4>
-                {recentRaceData.results[1].Driver.givenName}{" "}
-                {recentRaceData.results[1].Driver.familyName.toUpperCase()}
-              </h4>
-            )}
+            <img
+              src={recentRaceData.results[1].Driver.image}
+              alt={recentRaceData.results[1].Driver.familyName}
+            />
+            <h4>
+              {recentRaceData.results[1].Driver.givenName}{" "}
+              {recentRaceData.results[1].Driver.familyName.toUpperCase()}
+            </h4>
           </div>
           <div className={classes.first}>
             <h2>Winner</h2>
-            {recentRaceData.results && (
-              <img
-                src={recentRaceData.results[0].Driver.image}
-                alt={recentRaceData.results[0].Driver.familyName}
-              />
-            )}
-            {recentRaceData.results && (
-              <h4>
-                {recentRaceData.results[0].Driver.givenName}{" "}
-                {recentRaceData.results[0].Driver.familyName.toUpperCase()}
-              </h4>
-            )}
+            <img
+              src={recentRaceData.results[0].Driver.image}
+              alt={recentRaceData.results[0].Driver.familyName}
+            />
+            <h4>
+              {recentRaceData.results[0].Driver.givenName}{" "}
+              {recentRaceData.results[0].Driver.familyName.toUpperCase()}
+            </h4>
           </div>
           <div className={classes.third}>
             <h2>3rd Place</h2>
-            {recentRaceData.results && (
-              <img
-                src={recentRaceData.results[2].Driver.image}
-                alt={recentRaceData.results[2].Driver.familyName}
-              />
-            )}
-            {recentRaceData.results && (
-              <h4>
-                {recentRaceData.results[2].Driver.givenName}{" "}
-                {recentRaceData.results[2].Driver.familyName.toUpperCase()}
-              </h4>
-            )}
+            <img
+              src={recentRaceData.results[2].Driver.image}
+              alt={recentRaceData.results[2].Driver.familyName}
+            />
+            <h4>
+              {recentRaceData.results[2].Driver.givenName}{" "}
+              {recentRaceData.results[2].Driver.familyName.toUpperCase()}
+            </h4>
           </div>
         </div>
         <div className={classes.btn}>
-          <Link to="last-race-results">
+          <Link to={`/results/${recentRaceData.round}`}>
             <button>Full Results</button>
           </Link>
         </div>

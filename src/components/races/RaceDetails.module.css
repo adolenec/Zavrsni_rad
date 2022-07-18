@@ -1,0 +1,54 @@
+.race {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: rgb(207, 207, 207);
+  border-radius: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid black;
+}
+
+.nationality-image {
+    height: 100%;
+  }
+  
+  .nationality-image img {
+    height: 100%;
+  }
+
+.main .image {
+  width: 50%;
+  padding: 2rem;
+}
+
+.main .image img {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.info h1 {
+    margin-bottom: 1.5rem;
+}
+
+.info div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.info div p {
+    font-weight: bold;
+    font-size: 1.25rem;
+}

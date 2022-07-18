@@ -1,0 +1,13 @@
+.header {
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 5px solid rgb(225, 0, 0);
+  border-right: 5px solid rgb(225, 0, 0);
+  border-bottom-right-radius: 25px;
+  margin: 3rem 0;
+  cursor: pointer;
+}
+
+.header i {
+    color: rgb(225, 0, 0);
+}

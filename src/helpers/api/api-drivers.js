@@ -1,4 +1,6 @@
-import { getCurrentYear, setLimit } from "../helper-variables";
+import { formatedDate, getCurrentYear, setLimit } from "../helper-variables";
+import { driversImages } from "../image-arrays/drivers-images";
+import { driversNationalityImages } from "../image-arrays/drivers-nationalities-images";
 
 const currentYear = getCurrentYear();
 
@@ -49,4 +51,37 @@ export async function getCurrentDriversStanding(limit) {
   }
 
   return currentDriverStanding;
+}
+
+export async function getDriverDetails(id) {
+  let driverDetails;
+
+  try {
+    const response = await fetch(`http://ergast.com/api/f1/drivers/${id}.json`);
+    if (!response.ok) {
+      throw new Error("Couldn't load data");
+    }
+    const data = await response.json();
+
+    driverDetails = {
+      id: data.MRData.DriverTable.Drivers[0].driverId,
+      name: data.MRData.DriverTable.Drivers[0].givenName,
+      lastName: data.MRData.DriverTable.Drivers[0].familyName,
+      number: data.MRData.DriverTable.Drivers[0].permanentNumber,
+      dateOfBirth: formatedDate(data.MRData.DriverTable.Drivers[0].dateOfBirth),
+      nationality: data.MRData.DriverTable.Drivers[0].nationality,
+      nationalityImage: driversNationalityImages.find((image) =>
+        image.includes(data.MRData.DriverTable.Drivers[0].nationality)
+      ),
+      driverImage: driversImages.find((image) =>
+        image.includes(data.MRData.DriverTable.Drivers[0].familyName)
+      ),
+    };
+  } catch (err) {
+    driverDetails = {
+      message: err.message,
+    };
+  }
+
+  return driverDetails;
 }

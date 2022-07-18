@@ -13,7 +13,7 @@ const CurrentCalendar = () => {
   const title = `${currentYear} Calendar`;
 
   useEffect(() => {
-    getCurrentSchedule(4).then((data) => setSchedule(data));
+    getCurrentSchedule(5).then((data) => setSchedule(data));
   }, []);
 
   if (schedule.message) {
@@ -22,13 +22,13 @@ const CurrentCalendar = () => {
 
   return (
     <Wrapper>
-      <SectionHeader title={title} endpoint="schedule" />
+      <SectionHeader title={title} endpoint="circuits" />
       <div className={classes["current-calendar"]}>
         {schedule.map((race) => (
           <CurrentYearItem
             key={race.Circuit.circuitId}
             currentYearData={race}
-            endpoint="schedule"
+            endpoint="circuits"
           />
         ))}
       </div>

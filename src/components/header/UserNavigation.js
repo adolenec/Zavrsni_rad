@@ -7,6 +7,9 @@ const UserNavigation = ({ onHideHeader }) => {
       <div className={classes.user}>
         <ul>
           <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
             <NavLink to="/news-feed">News Feed</NavLink>
           </li>
           <li>

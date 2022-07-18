@@ -1,0 +1,90 @@
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  background: rgb(110, 110, 110);
+  margin-top: 1rem;
+  border-bottom: 3px solid;
+  max-width: 100%;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  padding: 0 1rem 0 0;
+  position: relative;
+}
+
+.left > h2 {
+  height: 100%;
+  background: rgb(131, 123, 123);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.driver-image {
+  height: 100%;
+}
+
+.driver-image img {
+  height: 100%;
+}
+
+.constructor-nationality-image {
+  height: 100%;
+  width: 15%;
+}
+
+.constructor-nationality-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.right {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.constructor-image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1.5rem;
+}
+
+.constructor-image img {
+  width: 35px;
+  height: 35px;
+}
+
+.number {
+  width: 5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.names {
+  font-style: italic;
+}
+
+.first {
+  background: rgba(230, 213, 213, 0.75);
+}
+
+.first .left > h2 {
+  background: rgb(163, 65, 65);
+}

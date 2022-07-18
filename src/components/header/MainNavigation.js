@@ -28,8 +28,8 @@ const MainNavigation = () => {
   };
 
   return (
-    <>
-    <UserNavigation onHideHeader={hideHeader}/>
+    <div className={classes.header}>
+      <UserNavigation onHideHeader={hideHeader} />
       <nav className={classes.nav}>
         <div className={classes.logo}>
           <ul>
@@ -53,7 +53,7 @@ const MainNavigation = () => {
       {showHeader && (
         <Header endpoint={apiEndpoint} onHideHeader={hideHeader} />
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import Wrapper from "../ui/Wrapper";
 import classes from "./HistoryHeader.module.css";
-import Senna from "../../images/history/Senna.jpeg";
+import Cars from "../../images/history/cars.jpeg";
+import Mercedes from "../../images/history/mercedes.jpeg";
 
 const HistoryHeader = () => {
   return (
@@ -14,10 +15,17 @@ const HistoryHeader = () => {
             </video>
           </div>
           <div className={classes.info}>
-            <h2>Explore F1 History</h2>
-            <div className={classes["info-item"]}>
-              <p>Find all drivers throughout the entire F1 history.</p>
-              <img src={Senna} alt="Ayrton Senna" />
+            <div className={classes["info-section"]}>
+              <div>
+                <img src={Cars} alt="F1 Cars" />
+                <p>
+                  Explore history about F1 teams, their stats and many more!
+                </p>
+              </div>
+              <div>
+                <img src={Mercedes} alt="Mercedes" />
+                <p>Find out all about drivers, circuits, results and other stats!</p>
+              </div>
             </div>
           </div>
         </div>

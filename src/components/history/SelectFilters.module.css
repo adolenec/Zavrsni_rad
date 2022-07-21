@@ -6,7 +6,7 @@
   align-items: flex-start;
 }
 
-.years {
+.years, .category {
   width: 20rem;
   background: none;
   border: none;
@@ -15,7 +15,7 @@
   overflow-x: scroll;
 }
 
-.years p {
+.years p, .category p {
   font-size: 0.9rem;
   background-color: black;
   color: #ccc;
@@ -23,17 +23,17 @@
   border-bottom: 1px solid #ccc;
 }
 
-.years p:hover {
+.years p:hover, .category p:hover {
   background-color: rgb(54, 53, 53);
   cursor: pointer;
 }
 
 .years-container h3 {
   padding: 0 2rem .3rem 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .years-container i {
   color: rgb(225, 0, 0);
-  margin-left: .75rem;
+  margin-left: .5rem;
 }

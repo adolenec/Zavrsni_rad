@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import { getSelectedYearDrivers } from "../../../helpers/api/api-drivers";
-import { getCurrentYear } from "../../../helpers/helper-variables";
-import SelectYear from "../SelectYear";
 import SelectedYearDriver from "./SelectedYearDriver";
 import classes from "./SelectedYearDrivers.module.css";
 
-const SelectedYearDrivers = () => {
-  const [selectedYear, setSelectedYear] = useState(getCurrentYear());
+const SelectedYearDrivers = ({ selectedYear }) => {
   const [drivers, setDrivers] = useState([]);
 
   useEffect(() => {
@@ -15,12 +12,8 @@ const SelectedYearDrivers = () => {
     });
   }, [selectedYear]);
 
-  console.log(selectedYear);
-  console.log(drivers);
-
   return (
     <>
-      <SelectYear onSelectYear={setSelectedYear} />
       <div className={classes.heading}>
         <p>Name</p>
         <p>Date of Birth</p>

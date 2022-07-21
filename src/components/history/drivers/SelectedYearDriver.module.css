@@ -1,0 +1,29 @@
+.driver {
+  background: #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.driver p,
+h3 {
+  font-size: 0.85rem;
+  width: 20%;
+  text-align: center;
+}
+
+.header {
+  border-bottom: 1px solid black;
+  padding: 0.5rem 0;
+}
+
+.driver-info {
+  padding: 1rem 0;
+}
+
+.driver-info div {
+  display: flex;
+  gap: 0.5rem;
+}

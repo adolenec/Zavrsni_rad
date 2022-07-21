@@ -1,8 +1,7 @@
 import MainNavigation from "../components/header/MainNavigation";
+import SelectedYearDrivers from "../components/history/drivers/SelectedYearDrivers";
 import HistoryHeader from "../components/history/HistoryHeader";
-import SelectYear from "../components/history/SelectYear";
 import Wrapper from "../components/ui/Wrapper";
-// import Wrapper from "../components/ui/Wrapper";
 
 import classes from './HistoryPage.module.css';
 
@@ -13,7 +12,7 @@ const HistoryPage = () => {
       <MainNavigation />
       <HistoryHeader/>
       <Wrapper>
-        <SelectYear/>
+        <SelectedYearDrivers/>
       </Wrapper>
     </div>
   );

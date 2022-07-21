@@ -85,3 +85,21 @@ export async function getDriverDetails(id) {
 
   return driverDetails;
 }
+
+export async function getSelectedYearDrivers(year) {
+  let drivers;
+  try {
+    const response = await fetch(`http://ergast.com/api/f1/${year}/drivers.json`);
+    if (!response.ok) {
+      throw new Error("Couldn't load data");
+    }
+    const data = await response.json();
+    drivers = data.MRData.DriverTable.Drivers;
+  } catch (err) {
+    drivers = {
+      message: err.message,
+    };
+  }
+
+  return drivers;
+}

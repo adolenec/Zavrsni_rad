@@ -1,9 +1,9 @@
 .years-container {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   padding: 2rem 0;
   color: #ccc;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .years {
@@ -11,7 +11,7 @@
   background: none;
   border: none;
   border-radius: 10px;
-  max-height: 4.5rem;
+  max-height: 5rem;
   overflow-x: scroll;
 }
 
@@ -26,5 +26,14 @@
 .years p:hover {
   background-color: rgb(54, 53, 53);
   cursor: pointer;
+}
+
+.years-container h3 {
+  padding: 0 2rem .3rem 0;
+  font-size: 1.5rem;
+}
+
+.years-container i {
   color: rgb(225, 0, 0);
+  margin-left: .75rem;
 }

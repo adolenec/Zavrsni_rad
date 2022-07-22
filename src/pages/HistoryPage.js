@@ -7,6 +7,7 @@ import { useState } from "react";
 import { getCurrentYear } from "../helpers/helper-variables";
 
 import classes from "./HistoryPage.module.css";
+import SelectedYearConstructors from "../components/history/constructors/SelectedYearConstructors";
 
 const HistoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
@@ -26,6 +27,9 @@ const HistoryPage = () => {
         />
         {selectedCategory === "Drivers" && (
           <SelectedYearDrivers selectedYear={selectedYear} />
+        )}
+        {selectedCategory === "Constructors" && (
+          <SelectedYearConstructors selectedYear={selectedYear} />
         )}
       </Wrapper>
     </div>

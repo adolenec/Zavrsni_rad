@@ -14,7 +14,7 @@ const Constructors = () => {
   const [constructors, setConstructors] = useState([]);
 
   useEffect(() => {
-    getConstructors().then((data) => {
+    getConstructors(getCurrentYear()).then((data) => {
       let constructorsInfo = [];
       for (const key in data) {
         constructorsInfo.push({

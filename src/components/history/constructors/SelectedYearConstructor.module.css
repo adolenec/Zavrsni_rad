@@ -1,0 +1,12 @@
+.constructor {
+  background: #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.constructor p, .constructor h3 {
+    text-align: center;
+    width: 50%;
+}

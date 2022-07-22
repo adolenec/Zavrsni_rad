@@ -1,0 +1,21 @@
+.heading {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid rgb(225, 0, 0);
+    border-right: 2px solid rgb(225, 0, 0);
+    border-bottom-right-radius: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .constructors {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .heading p {
+    width: 50%;
+    text-align: center;
+  }

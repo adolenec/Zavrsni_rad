@@ -1,8 +1,8 @@
 import { constructorsImages } from "../image-arrays/constructors-images";
 import { constructorsNationalityImages } from "../image-arrays/constructors-nationalities-images";
-import { constructorColor, getCurrentYear, setLimit } from "../helper-variables";
+import { constructorColor, setLimit } from "../helper-variables";
 
-const currentYear = getCurrentYear();
+// const currentYear = getCurrentYear();
 
 export async function getConstructorDetails(id) {
   let constructorDetails;
@@ -72,17 +72,18 @@ export async function getSpecificConstructorStanding(id) {
   return constructorStanding;
 }
 
-export async function getConstructors() {
+export async function getConstructors(year) {
   let constructors;
   try {
     const response = await fetch(
-      `http://ergast.com/api/f1/${currentYear}/constructors.json`
+      `http://ergast.com/api/f1/${year}/constructors.json`
     );
     if (!response.ok) {
       throw new Error("Couldn't load data");
     }
 
     const data = await response.json();
+    console.log(data);
 
     constructors = data.MRData.ConstructorTable.Constructors;
   } catch (err) {
@@ -114,4 +115,22 @@ export async function getCurrentConstructorStandings(limit) {
   }
 
   return currentConstructorStanding;
+}
+
+export async function getSelectedYearDrivers(year) {
+  let drivers;
+  try {
+    const response = await fetch(`http://ergast.com/api/f1/${year}/drivers.json`);
+    if (!response.ok) {
+      throw new Error("Couldn't load data");
+    }
+    const data = await response.json();
+    drivers = data.MRData.DriverTable.Drivers;
+  } catch (err) {
+    drivers = {
+      message: err.message,
+    };
+  }
+
+  return drivers;
 }

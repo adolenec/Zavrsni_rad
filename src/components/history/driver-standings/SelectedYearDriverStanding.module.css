@@ -1,0 +1,17 @@
+.driver-standing {
+  background: #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.driver-standing p {
+  width: 40%;
+  text-align: center;
+}
+
+.driver-standing p:first-child,
+.driver-standing p:last-child {
+  width: 10%;
+}

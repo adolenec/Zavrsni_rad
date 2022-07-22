@@ -31,17 +31,18 @@ export async function getCurrentYearData(url, limit) {
   return currentYearData;
 }
 
-export async function getCurrentDriversStanding(limit) {
+export async function getDriversStanding(year, limit) {
   const limitData = setLimit(limit);
   let currentDriverStanding;
   try {
     const response = await fetch(
-      `http://ergast.com/api/f1/current/driverStandings.json?limit=${limitData}`
+      `http://ergast.com/api/f1/${year}/driverStandings.json?limit=${limitData}`
     );
     if (!response.ok) {
       throw new Error("Couldn't load data");
     }
     const data = await response.json();
+
     currentDriverStanding =
       data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
   } catch (err) {
@@ -89,7 +90,9 @@ export async function getDriverDetails(id) {
 export async function getSelectedYearDrivers(year) {
   let drivers;
   try {
-    const response = await fetch(`http://ergast.com/api/f1/${year}/drivers.json`);
+    const response = await fetch(
+      `http://ergast.com/api/f1/${year}/drivers.json`
+    );
     if (!response.ok) {
       throw new Error("Couldn't load data");
     }

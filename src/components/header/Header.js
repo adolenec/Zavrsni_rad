@@ -1,11 +1,12 @@
 import classes from "./Header.module.css";
 import { useEffect, useState } from "react";
 import {
-  getCurrentDriversStanding,
   getCurrentYearData,
+  getDriversStanding,
 } from "../../helpers/api/api-drivers";
 import HeaderItem from "./HeaderItem";
 import { getCurrentSchedule } from "../../helpers/api/api-schedule";
+import { getCurrentYear } from "../../helpers/helper-variables";
 
 const Header = (props) => {
   const [currentYearData, setCurrentYearData] = useState([]);
@@ -24,7 +25,7 @@ const Header = (props) => {
     }
 
     if (props.endpoint === "standings") {
-      getCurrentDriversStanding(4).then((data) =>
+      getDriversStanding(getCurrentYear(), 4).then((data) =>
         setCurrentDriversStanding(data)
       );
     }

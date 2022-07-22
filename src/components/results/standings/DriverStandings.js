@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { getCurrentDriversStanding } from "../../../helpers/api/api-drivers";
+import { getDriversStanding } from "../../../helpers/api/api-drivers";
 import {
   constructorColor,
   getCurrentYear,
@@ -20,7 +20,7 @@ const DriverStandings = () => {
 
   useEffect(() => {
     let driversArray = [];
-    getCurrentDriversStanding().then((data) => {
+    getDriversStanding(getCurrentYear()).then((data) => {
       for (const key in data) {
         driversArray.push({
           ...data[key].Driver,

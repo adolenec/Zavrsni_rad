@@ -4,7 +4,7 @@ import {
   constructorColor,
   getCurrentYear,
 } from "../../../helpers/helper-variables";
-import { getCurrentConstructorStandings } from "../../../helpers/api/api-constructors";
+import { getConstructorStandings } from "../../../helpers/api/api-constructors";
 import { constructorsImages } from "../../../helpers/image-arrays/constructors-images";
 import ResultItem from "../ResultsItem";
 import { constructorsNationalityImages } from "../../../helpers/image-arrays/constructors-nationalities-images";
@@ -19,7 +19,7 @@ const ConstructorStandings = () => {
 
   useEffect(() => {
     let constructorsArray = [];
-    getCurrentConstructorStandings().then((data) => {
+    getConstructorStandings(getCurrentYear()).then((data) => {
       for (const key in data) {
         constructorsArray.push({
           ...data[key].Constructor,

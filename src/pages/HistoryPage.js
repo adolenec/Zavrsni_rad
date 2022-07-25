@@ -9,6 +9,7 @@ import { getCurrentYear } from "../helpers/helper-variables";
 import classes from "./HistoryPage.module.css";
 import SelectedYearConstructors from "../components/history/constructors/SelectedYearConstructors";
 import SelectedYearDriverStandings from "../components/history/driver-standings/SelectedYearDriverStandings";
+import SelectedYearConstructorStandings from "../components/history/constructor-standings/SelectedYearConstructorStandings";
 
 const HistoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
@@ -35,6 +36,10 @@ const HistoryPage = () => {
         {selectedCategory === "Driver Standings" && (
           <SelectedYearDriverStandings selectedYear={selectedYear} />
         )}
+        {selectedCategory === "Constructor Standings" && (
+          <SelectedYearConstructorStandings selectedYear={selectedYear} />
+        )}
+        
       </Wrapper>
     </div>
   );

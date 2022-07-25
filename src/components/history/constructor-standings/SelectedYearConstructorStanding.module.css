@@ -1,0 +1,17 @@
+.constructor-standing {
+  background: #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.constructor-standing p {
+  width: 80%;
+  text-align: center;
+}
+
+.constructor-standing p:first-child,
+.constructor-standing p:last-child {
+  width: 10%;
+}

@@ -95,12 +95,12 @@ export async function getConstructors(year) {
   return constructors;
 }
 
-export async function getCurrentConstructorStandings(limit) {
+export async function getConstructorStandings(year, limit) {
   const limitData = setLimit(limit);
   let currentConstructorStanding;
   try {
     const response = await fetch(
-      `http://ergast.com/api/f1/current/constructorStandings.json?limit=${limitData}`
+      `http://ergast.com/api/f1/${year}/constructorStandings.json?limit=${limitData}`
     );
     if (!response.ok) {
       throw new Error("Couldn't load data");

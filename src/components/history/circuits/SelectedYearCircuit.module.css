@@ -1,0 +1,16 @@
+.circuit {
+  background: #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.circuit p {
+  width: 30%;
+  text-align: center;
+}
+
+.circuit p:first-child {
+  width: 10%;
+}

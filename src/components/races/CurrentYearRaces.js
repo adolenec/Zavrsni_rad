@@ -2,7 +2,7 @@ import classes from "./CurrentYearRaces.module.css";
 import { getCurrentYear } from "../../helpers/helper-variables";
 import CurrentYearItem from "../starting-page/CurrentYearItem";
 import { useEffect, useState } from "react";
-import { getCurrentSchedule } from "../../helpers/api/api-schedule";
+import { getSchedule } from "../../helpers/api/api-schedule";
 
 const currentYear = getCurrentYear();
 
@@ -10,7 +10,7 @@ const CurrentYearRaces = () => {
     const [schedule, setSchedule] = useState([]);
 
     useEffect(() => {
-        getCurrentSchedule().then(data=> setSchedule(data));
+        getSchedule(getCurrentYear()).then(data=> setSchedule(data));
     }, [])
 
   return (

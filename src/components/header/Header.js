@@ -5,7 +5,7 @@ import {
   getDriversStanding,
 } from "../../helpers/api/api-drivers";
 import HeaderItem from "./HeaderItem";
-import { getCurrentSchedule } from "../../helpers/api/api-schedule";
+import { getSchedule } from "../../helpers/api/api-schedule";
 import { getCurrentYear } from "../../helpers/helper-variables";
 
 const Header = (props) => {
@@ -31,7 +31,7 @@ const Header = (props) => {
     }
 
     if (props.endpoint === "schedule") {
-      getCurrentSchedule().then((data) => setCurrentSchedule(data));
+      getSchedule(getCurrentYear()).then((data) => setCurrentSchedule(data));
     }
   }, [props.endpoint]);
 

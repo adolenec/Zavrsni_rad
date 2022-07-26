@@ -1,15 +1,15 @@
-import { getCurrentYear, setLimit } from "../helper-variables";
+import { setLimit } from "../helper-variables";
 import { circuitsImages } from "../image-arrays/circuits-images";
 import { circuitsNationalitiesImages } from "../image-arrays/circuits-nationalities-images";
 
-const currentYear = getCurrentYear();
+// const currentYear = getCurrentYear();
 
-export async function getCurrentSchedule(limit) {
+export async function getSchedule(year, limit) {
   const limitData = setLimit(limit);
   let schedule;
   try {
     const response = await fetch(
-      `http://ergast.com/api/f1/${currentYear}.json?limit=${limitData}`
+      `http://ergast.com/api/f1/${year}.json?limit=${limitData}`
     );
     if (!response.ok) {
       throw new Error("Couldn't load data");

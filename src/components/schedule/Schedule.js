@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getCurrentSchedule } from "../../helpers/api/api-schedule";
-import { formatedDate } from "../../helpers/helper-variables";
+import { getSchedule } from "../../helpers/api/api-schedule";
+import { formatedDate, getCurrentYear } from "../../helpers/helper-variables";
 import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
 import { circuitsNationalitiesImages } from "../../helpers/image-arrays/circuits-nationalities-images";
 import CurrentYearItem from "../starting-page/CurrentYearItem";
@@ -13,7 +13,7 @@ const Schedule = () => {
   const todayDate = new Date().toISOString().slice(0, 10);
 
   useEffect(() => {
-    getCurrentSchedule().then((data) => {
+    getSchedule(getCurrentYear()).then((data) => {
       let upcomingRacesArray = [];
       for (const key in data) {
         if (data[key].date >= todayDate) {

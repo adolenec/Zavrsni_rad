@@ -3,7 +3,7 @@ import SectionHeader from "../ui/SectionHeader";
 import { getCurrentYear } from "../../helpers/helper-variables";
 import Wrapper from "../ui/Wrapper";
 import { useEffect, useState } from "react";
-import { getCurrentSchedule } from "../../helpers/api/api-schedule";
+import { getSchedule } from "../../helpers/api/api-schedule";
 import CurrentYearItem from "./CurrentYearItem";
 
 const currentYear = getCurrentYear();
@@ -13,7 +13,7 @@ const CurrentCalendar = () => {
   const title = `${currentYear} Calendar`;
 
   useEffect(() => {
-    getCurrentSchedule(5).then((data) => setSchedule(data));
+    getSchedule(getCurrentYear(), 5).then((data) => setSchedule(data));
   }, []);
 
   if (schedule.message) {

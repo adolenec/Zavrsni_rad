@@ -9,8 +9,9 @@
 .previous-races {
   display: flex;
   flex-wrap: wrap;
+  gap: 1.25%;
   margin: 2rem 0;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .next-race {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getCurrentSchedule } from "../../helpers/api/api-schedule";
+import { getSchedule } from "../../helpers/api/api-schedule";
 import { circuitsImages } from "../../helpers/image-arrays/circuits-images";
-import { formatedDate } from "../../helpers/helper-variables";
+import { formatedDate, getCurrentYear } from "../../helpers/helper-variables";
 import Wrapper from "../ui/Wrapper";
 import classes from "./NextRace.module.css";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ const NextRace = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    getCurrentSchedule().then((data) => {
+    getSchedule(getCurrentYear()).then((data) => {
       let upcomingRaces = [];
       if (data.message) {
         setError(true);

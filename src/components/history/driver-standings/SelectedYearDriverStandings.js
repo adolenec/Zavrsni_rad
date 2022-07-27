@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getDriversStanding } from "../../../helpers/api/api-drivers";
 import SelectedYearDriverStanding from "./SelectedYearDriverStanding";
 import classes from "./SelectedYearDriverStandings.module.css";
+import { motion } from "framer-motion";
 
 const SelectedYearDriverStandings = ({ selectedYear }) => {
   const [driverStandings, setDriverStandings] = useState([]);
@@ -11,7 +12,13 @@ const SelectedYearDriverStandings = ({ selectedYear }) => {
   }, [selectedYear]);
 
   return (
-    <>
+    <motion.div
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1, type: "spring", bounce: 0.5, delay: .2 }}
+      exit={{ y: "100vw" }}
+      key="circuits"
+    >
       <div className={classes.heading}>
         <p>Position</p>
         <p>Driver</p>
@@ -26,7 +33,7 @@ const SelectedYearDriverStandings = ({ selectedYear }) => {
           />
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

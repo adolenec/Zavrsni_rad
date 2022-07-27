@@ -1,16 +1,17 @@
+import { useState } from "react";
 import MainNavigation from "../components/header/MainNavigation";
 import SelectedYearDrivers from "../components/history/drivers/SelectedYearDrivers";
 import HistoryHeader from "../components/history/HistoryHeader";
 import SelectFilters from "../components/history/SelectFilters";
 import Wrapper from "../components/ui/Wrapper";
-import { useState } from "react";
 import { getCurrentYear } from "../helpers/helper-variables";
+import Footer from '../components/footer/Footer';
 
-import classes from "./HistoryPage.module.css";
+import SelectedYearCircuits from "../components/history/circuits/SelectedYearCircuits";
+import SelectedYearConstructorStandings from "../components/history/constructor-standings/SelectedYearConstructorStandings";
 import SelectedYearConstructors from "../components/history/constructors/SelectedYearConstructors";
 import SelectedYearDriverStandings from "../components/history/driver-standings/SelectedYearDriverStandings";
-import SelectedYearConstructorStandings from "../components/history/constructor-standings/SelectedYearConstructorStandings";
-import SelectedYearCircuits from "../components/history/circuits/SelectedYearCircuits";
+import classes from "./HistoryPage.module.css";
 
 const HistoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
@@ -42,9 +43,9 @@ const HistoryPage = () => {
         )}
         {selectedCategory === "Circuits" && (
           <SelectedYearCircuits selectedYear={selectedYear} />
-        )}
-        
+        )}      
       </Wrapper>
+      <Footer/>
     </div>
   );
 };

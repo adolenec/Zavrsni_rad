@@ -81,6 +81,14 @@
   font-style: italic;
 }
 
+.names h3 {
+  font-size: 1rem;
+}
+
+.names h1 {
+  font-size: 1.5rem;
+}
+
 .first {
   background: rgba(230, 213, 213, 0.75);
 }

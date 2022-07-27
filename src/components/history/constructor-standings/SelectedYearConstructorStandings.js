@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getConstructorStandings } from "../../../helpers/api/api-constructors";
 import SelectedYearConstructorStanding from "./SelectedYearConstructorStanding";
 import classes from "./SelectedYearConstructorStandings.module.css";
+import { motion } from "framer-motion";
 
 const SelectedYearConstructorStandings = ({ selectedYear }) => {
   const [constructorStandings, setConstructorStandings] = useState([]);
@@ -13,7 +14,13 @@ const SelectedYearConstructorStandings = ({ selectedYear }) => {
   }, [selectedYear]);
 
   return (
-    <>
+    <motion.div
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1, type: "spring", bounce: 0.5, delay: .2 }}
+      exit={{ y: "100vw" }}
+      key="circuits"
+    >
       <div className={classes.heading}>
         <p>Position</p>
         <p>Constructor</p>
@@ -27,7 +34,7 @@ const SelectedYearConstructorStandings = ({ selectedYear }) => {
           />
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

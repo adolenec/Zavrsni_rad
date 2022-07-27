@@ -2,6 +2,7 @@ import classes from "./SelectedYearCircuits.module.css";
 import { useEffect, useState } from "react";
 import { getSchedule } from "../../../helpers/api/api-schedule";
 import SelectedYearCircuit from "./SelectedYearCircuit";
+import { motion } from "framer-motion";
 
 const SelectedYearCircuits = ({ selectedYear }) => {
   const [circuits, setCircuits] = useState([]);
@@ -11,7 +12,13 @@ const SelectedYearCircuits = ({ selectedYear }) => {
   }, [selectedYear]);
 
   return (
-    <>
+    <motion.div
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1, type: "spring", bounce: 0.5, delay: 0.2 }}
+      exit={{ y: "100vw" }}
+      key="circuits"
+    >
       <div className={classes.heading}>
         <p>Round</p>
         <p>Race</p>
@@ -23,7 +30,7 @@ const SelectedYearCircuits = ({ selectedYear }) => {
           <SelectedYearCircuit key={circuit.Circuit.circuitId} info={circuit} />
         ))}
       </div>
-    </>
+    </motion.div>
   );
 };
 

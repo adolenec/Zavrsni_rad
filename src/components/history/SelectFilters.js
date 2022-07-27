@@ -32,7 +32,7 @@ const SelectYear = ({ onSelectYear, onSelectCategory }) => {
   return (
     <div className={classes["years-container"]}>
       <h3>
-        Select Parameters <i className="fa-solid fa-angle-right"></i>
+        Select Filters <i className="fa-solid fa-angle-right"></i>
       </h3>
       <div className={classes.years}>
         {years.map((year, i) => (

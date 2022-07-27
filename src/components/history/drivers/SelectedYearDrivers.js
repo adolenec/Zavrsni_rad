@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getSelectedYearDrivers } from "../../../helpers/api/api-drivers";
 import SelectedYearDriver from "./SelectedYearDriver";
 import classes from "./SelectedYearDrivers.module.css";
+import { motion } from "framer-motion";
 
 const SelectedYearDrivers = ({ selectedYear }) => {
   const [drivers, setDrivers] = useState([]);
@@ -13,7 +14,13 @@ const SelectedYearDrivers = ({ selectedYear }) => {
   }, [selectedYear]);
 
   return (
-    <>
+    <motion.div
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1, type: "spring", bounce: 0.5, delay: .2 }}
+      exit={{ y: "100vw" }}
+      key="circuits"
+    >
       <div className={classes.heading}>
         <p>Name</p>
         <p>Date of Birth</p>
@@ -29,7 +36,7 @@ const SelectedYearDrivers = ({ selectedYear }) => {
         *Note: Only drivers that have participated in the 2014 season onwards
         have permanent number
       </p>
-    </>
+    </motion.div>
   );
 };
 

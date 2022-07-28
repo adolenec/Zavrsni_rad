@@ -1,7 +1,7 @@
 .header {
   background: rgba(0, 0, 0, 0.95);
   padding: 1.25rem 0 3rem;
-  border-bottom: 2px solid rgb(225, 0, 0);
+  /* border-bottom: 2px solid rgb(225, 0, 0); */
   color: #ccc;
 }
 

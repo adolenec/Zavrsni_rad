@@ -14,31 +14,13 @@ import SelectedYearDriverStandings from "../components/history/driver-standings/
 import classes from "./HistoryPage.module.css";
 import { Switch, useRouteMatch, Route } from "react-router-dom";
 import HistoryNavigation from "../components/history/HistoryNavigation";
-// import { getDriverWinners } from "../helpers/api/api-results";
+import TitlesChart from "../components/history/records/TitlesChart";
 
 const HistoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
   const [selectedCategory, setSelectedCategory] = useState("Drivers");
 
-  let { path, url } = useRouteMatch();
-
-  //Move commented code into separate component later!!
-
-  // useEffect(() => {
-  //   let array = [];
-  //   getDriverWinners().then((data) => {
-  //     console.log(data);
-  //     for (const key in data) {
-  //       console.log(data[key]);
-  //       array.push({name: key, titles: data[key]});
-  //       console.log(key)
-  //       console.log(data[key]);
-  //     }
-  //   });
-  //   console.log(array);
-  // });
-
-  console.log(path, url);
+  let { path } = useRouteMatch();
 
   return (
     <div className={classes.body}>
@@ -51,6 +33,8 @@ const HistoryPage = () => {
             <SelectFilters
               onSelectYear={setSelectedYear}
               onSelectCategory={setSelectedCategory}
+              activeCategory={selectedCategory}
+              activeYear={selectedYear}
             />
             {selectedCategory === "Drivers" && (
               <SelectedYearDrivers selectedYear={selectedYear} />
@@ -67,6 +51,9 @@ const HistoryPage = () => {
             {selectedCategory === "Circuits" && (
               <SelectedYearCircuits selectedYear={selectedYear} />
             )}
+          </Route>
+          <Route path={`${path}/records`}>
+            <TitlesChart/>
           </Route>
         </Switch>
       </Wrapper>

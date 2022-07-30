@@ -27,7 +27,7 @@ const SelectedYearCircuits = ({ selectedYear }) => {
       </div>
       <div className={classes.circuits}>
         {circuits.map((circuit) => (
-          <SelectedYearCircuit key={circuit.Circuit.circuitId} info={circuit} />
+          <SelectedYearCircuit key={circuit.raceName} info={circuit} />
         ))}
       </div>
     </motion.div>

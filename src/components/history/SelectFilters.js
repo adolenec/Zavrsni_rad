@@ -2,15 +2,24 @@ import React, { useState } from "react";
 import { getCurrentYear } from "../../helpers/helper-variables";
 import classes from "./SelectFilters.module.css";
 
-const SelectYear = ({ onSelectYear, onSelectCategory }) => {
+const SelectYear = ({
+  onSelectYear,
+  onSelectCategory,
+  activeCategory,
+  activeYear,
+}) => {
   const currentYear = getCurrentYear();
-
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState("Drivers");
 
   const years = [...Array(currentYear - 1950 + 1).keys()]
     .map((x) => x + 1950)
     .reverse();
+
+  const activeYearIndex = years.findIndex((year) => year === activeYear);
+  console.log(activeYearIndex);
+
+  const [selectedIndex, setSelectedIndex] = useState(activeYearIndex);
+  const [selectedCategory, setSelectedCategory] = useState(activeCategory);
+
   const category = [
     "Drivers",
     "Constructors",

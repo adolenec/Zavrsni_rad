@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { Switch, useRouteMatch, Route } from "react-router-dom";
+
+import classes from "./HistoryPage.module.css";
+
 import MainNavigation from "../components/header/MainNavigation";
 import SelectedYearDrivers from "../components/history/drivers/SelectedYearDrivers";
 import HistoryHeader from "../components/history/HistoryHeader";
@@ -6,13 +10,10 @@ import SelectFilters from "../components/history/SelectFilters";
 import Wrapper from "../components/ui/Wrapper";
 import { getCurrentYear } from "../helpers/helper-variables";
 import Footer from "../components/footer/Footer";
-
 import SelectedYearCircuits from "../components/history/circuits/SelectedYearCircuits";
 import SelectedYearConstructorStandings from "../components/history/constructor-standings/SelectedYearConstructorStandings";
 import SelectedYearConstructors from "../components/history/constructors/SelectedYearConstructors";
 import SelectedYearDriverStandings from "../components/history/driver-standings/SelectedYearDriverStandings";
-import classes from "./HistoryPage.module.css";
-import { Switch, useRouteMatch, Route } from "react-router-dom";
 import HistoryNavigation from "../components/history/HistoryNavigation";
 import TitlesChart from "../components/history/records/TitlesChart";
 

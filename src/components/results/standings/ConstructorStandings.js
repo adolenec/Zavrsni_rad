@@ -8,6 +8,7 @@ import { getConstructorStandings } from "../../../helpers/api/api-constructors";
 import { constructorsImages } from "../../../helpers/image-arrays/constructors-images";
 import ResultItem from "../ResultsItem";
 import { constructorsNationalityImages } from "../../../helpers/image-arrays/constructors-nationalities-images";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ConstructorStandings = () => {
   const [constructorStanding, setConstructorStanding] = useState([]);
@@ -48,13 +49,25 @@ const ConstructorStandings = () => {
           {!showStanding && <i className="fa-solid fa-angle-up"></i>}
         </h1>
       </div>
-      {showStanding && (
-        <div className={classes["constructor-standings"]}>
-          {constructorStanding.map((constructor) => (
-            <ResultItem info={constructor} key={constructor.constructorId} />
-          ))}
-        </div>
-      )}
+      <AnimatePresence inital={false}>
+        {showStanding && (
+          <motion.div
+            className={classes["constructor-standings"]}
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: "auto" },
+              collapsed: { opacity: 0, height: 0 },
+            }}
+            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 1] }}
+          >
+            {constructorStanding.map((constructor) => (
+              <ResultItem info={constructor} key={constructor.constructorId} />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

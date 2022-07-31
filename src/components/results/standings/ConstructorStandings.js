@@ -60,7 +60,7 @@ const ConstructorStandings = () => {
               open: { opacity: 1, height: "auto" },
               collapsed: { opacity: 0, height: 0 },
             }}
-            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 1] }}
+            transition={{ duration: 0.8, ease: 'linear' }}
           >
             {constructorStanding.map((constructor) => (
               <ResultItem info={constructor} key={constructor.constructorId} />

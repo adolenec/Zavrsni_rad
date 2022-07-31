@@ -56,11 +56,10 @@
 
 .constructor-image {
   height: 100%;
-  width: 105px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 1.5rem;
 }
 
 .constructor-image img {
@@ -75,7 +74,7 @@
   align-items: center;
   justify-content: center;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .names {

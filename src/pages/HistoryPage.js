@@ -16,6 +16,7 @@ import SelectedYearConstructors from "../components/history/constructors/Selecte
 import SelectedYearDriverStandings from "../components/history/driver-standings/SelectedYearDriverStandings";
 import HistoryNavigation from "../components/history/HistoryNavigation";
 import TitlesChart from "../components/history/records/TitlesChart";
+import ConstructorTitlesChart from "../components/history/records/ConstructorTitlesChart";
 
 const HistoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
@@ -54,7 +55,12 @@ const HistoryPage = () => {
             )}
           </Route>
           <Route path={`${path}/records`}>
-            <TitlesChart/>
+            <div className={classes.charts}>
+              <TitlesChart />
+              <div className={classes['test-div']}></div>
+              <div className={classes['test-div2']}></div>
+              <ConstructorTitlesChart />
+            </div>
           </Route>
         </Switch>
       </Wrapper>

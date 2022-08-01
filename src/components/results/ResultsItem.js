@@ -34,9 +34,14 @@ const LastRaceResultsItem = ({ info }) => {
       <div className={classes.right}>
         <div
           className={classes["constructor-image"]}
-          style={{ background: info.color, backgroundImage: `url(${info.constructorImage})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
+          style={{
+            background: info.color,
+            backgroundImage: `url(${info.constructorImage})`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
         >
-          {/* <img src={info.constructorImage} alt={info.constructorId} /> */}
         </div>
         <div
           className={classes.number}

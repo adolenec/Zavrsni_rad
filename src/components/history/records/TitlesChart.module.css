@@ -1,26 +1,15 @@
 .titles {
-    width: 60%;
-    height: 20rem;
-    background: rgb(56, 56, 56);
-    background-image: url('../../../images/history/hamilton_schumacher.png');
-    background-size: cover;
-    border-radius: 10px;
-    padding: 1rem;
-    transition: all .4s;
+  background: rgb(56, 56, 56);
+  background-image: url("../../../images/history/hamilton_schumacher.png");
+  background-size: cover;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.4s;
 }
 
 .titles:hover {
-    background:rgb(41, 41, 41);
-    background-image: url('../../../images/history/hamilton_schumacher.png');
-    background-size: cover;
-}
-
-.title {
-    color: rgb(102, 102, 102);
-    padding: .5rem 0;
-}
-
-.title i {
-    color: gold;
-    margin-left: .5rem;
+  background: rgb(41, 41, 41);
+  background-image: url("../../../images/history/hamilton_schumacher.png");
+  background-size: cover;
+  background-position-y: bottom;
 }

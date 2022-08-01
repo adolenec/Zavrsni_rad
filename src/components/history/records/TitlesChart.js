@@ -52,17 +52,22 @@ const TitlesChart = () => {
           color: "white",
         },
       },
+      title: {
+        display: true,
+        text: "Most Titles By Driver",
+        color: "white",
+        font: {
+          size: "30",
+        },
+      },
     },
     maintainAspectRatio: false,
   };
 
   return (
-    <>
-      <h2 className={classes.title}>Most Titles Won By Driver <i className="fa-solid fa-trophy"></i></h2>
-      <div className={classes.titles}>
-        <Doughnut data={data} height={null} width={null} options={options} />
-      </div>
-    </>
+    <div className={classes.titles}>
+      <Doughnut data={data} height={null} width={null} options={options} />
+    </div>
   );
 };
 

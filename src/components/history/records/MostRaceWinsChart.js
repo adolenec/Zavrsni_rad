@@ -53,7 +53,7 @@ const MostRaceWinsChart = () => {
         text: "Most Race Wins",
         color: "white",
         font: {
-          size: "30",
+          size: "25",
         },
       },
     },

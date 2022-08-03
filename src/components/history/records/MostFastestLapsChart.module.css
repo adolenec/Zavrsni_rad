@@ -1,0 +1,13 @@
+.fastest-laps {
+    background-image: url('../../../images/history/hamilton_raikkonen.png');
+    background-size: cover;
+    border-radius: 10px;
+    padding: .5rem;
+    transition: all .4s;
+}
+
+.fastest-laps:hover {
+    background-image: url('../../../images/history/hamilton_raikkonen.png');
+    background-size: cover;
+    background-position-x: right;
+}

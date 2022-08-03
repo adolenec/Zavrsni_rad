@@ -51,7 +51,6 @@ export async function getConstructorWinners() {
     }
 
     const data = await response.json();
-    console.log(data);
     for (const key in data.MRData.StandingsTable.StandingsLists) {
       winners.push(
         data.MRData.StandingsTable.StandingsLists[key].ConstructorStandings[0]
@@ -88,15 +87,52 @@ export async function getMostRaceWins() {
     }
 
     const data = await response.json();
-    console.log(data);
     for (const key in data.MRData.RaceTable.Races) {
       winners.push(
-        data.MRData.RaceTable.Races[key].Results[0].Driver.givenName + " " +
+        data.MRData.RaceTable.Races[key].Results[0].Driver.givenName +
+          " " +
           data.MRData.RaceTable.Races[key].Results[0].Driver.familyName
       );
     }
 
     for (const element of winners) {
+      if (count[element]) {
+        count[element] += 1;
+      } else {
+        count[element] = 1;
+      }
+    }
+  } catch (err) {
+    count = {
+      message: err.message,
+    };
+  }
+
+  return count;
+}
+
+export async function getMostFastestLaps() {
+  let fastestLaps = [];
+  let count = {};
+
+  try {
+    const response = await fetch(
+      "http://ergast.com/api/f1/fastest/1/results.json?limit=500"
+    );
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+
+    const data = await response.json();
+    for (const key in data.MRData.RaceTable.Races) {
+      fastestLaps.push(
+        data.MRData.RaceTable.Races[key].Results[0].Driver.givenName +
+          " " +
+          data.MRData.RaceTable.Races[key].Results[0].Driver.familyName
+      );
+    }
+
+    for (const element of fastestLaps) {
       if (count[element]) {
         count[element] += 1;
       } else {

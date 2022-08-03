@@ -17,6 +17,7 @@ import SelectedYearDriverStandings from "../components/history/driver-standings/
 import HistoryNavigation from "../components/history/HistoryNavigation";
 import TitlesChart from "../components/history/records/TitlesChart";
 import ConstructorTitlesChart from "../components/history/records/ConstructorTitlesChart";
+import MostRaceWinsChart from "../components/history/records/MostRaceWinsChart";
 
 const HistoryPage = () => {
   const [selectedYear, setSelectedYear] = useState(getCurrentYear());
@@ -57,8 +58,8 @@ const HistoryPage = () => {
           <Route path={`${path}/records`}>
             <div className={classes.charts}>
               <TitlesChart />
+              <MostRaceWinsChart/>
               <div className={classes['test-div']}></div>
-              <div className={classes['test-div2']}></div>
               <ConstructorTitlesChart />
             </div>
           </Route>

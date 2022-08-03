@@ -74,3 +74,40 @@ export async function getConstructorWinners() {
 
   return count;
 }
+
+export async function getMostRaceWins() {
+  let winners = [];
+  let count = {};
+
+  try {
+    const response = await fetch(
+      "http://ergast.com/api/f1/results/1.json?limit=800&offset=300"
+    );
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+
+    const data = await response.json();
+    console.log(data);
+    for (const key in data.MRData.RaceTable.Races) {
+      winners.push(
+        data.MRData.RaceTable.Races[key].Results[0].Driver.givenName + " " +
+          data.MRData.RaceTable.Races[key].Results[0].Driver.familyName
+      );
+    }
+
+    for (const element of winners) {
+      if (count[element]) {
+        count[element] += 1;
+      } else {
+        count[element] = 1;
+      }
+    }
+  } catch (err) {
+    count = {
+      message: err.message,
+    };
+  }
+
+  return count;
+}

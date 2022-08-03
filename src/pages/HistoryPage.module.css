@@ -6,14 +6,11 @@
     display: grid;
     grid-template-columns: 2.5fr 1fr 1fr;
     grid-template-rows: 18rem 30rem;
-    grid-gap: 2%;
+    grid-gap: 1%;
+    margin-top: 5rem;
 }
 
 .test-div {
     background: blue;
-    border-radius: 10px;
-}
-.test-div2 {
-    background: violet;
     border-radius: 10px;
 }

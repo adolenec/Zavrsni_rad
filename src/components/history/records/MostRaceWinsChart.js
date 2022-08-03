@@ -1,4 +1,6 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { getMostRaceWins } from "../../../helpers/api/api-records";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,10 +12,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-import { useEffect, useState } from "react";
-
-import { getConstructorWinners } from "../../../helpers/api/api-records";
-import classes from "./ConstructorTitlesChart.module.css";
+import classes from "./MostRaceWinsChart.module.css";
 
 ChartJS.register(
   CategoryScale,
@@ -23,17 +22,17 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-const ConstructorTitlesChart = () => {
-  const [titles, setTitles] = useState([]);
-  const [constructors, setConstructors] = useState([]);
+const MostRaceWinsChart = () => {
+  const [winners, setWinners] = useState([]);
+  const [numberOfWins, setNumberOfWins] = useState([]);
 
   useEffect(() => {
-    getConstructorWinners().then((data) => {
+    getMostRaceWins().then((data) => {
+      console.log(data);
       let sortedKeys = Object.keys(data).sort((a, b) => data[b] - data[a]);
       let sortedValues = Object.values(data).sort((a, b) => b - a);
-      setConstructors(sortedKeys);
-      setTitles(Object.values(sortedValues));
+      setWinners(sortedKeys.slice(0, 8));
+      setNumberOfWins(sortedValues.slice(0, 8));
     });
   }, []);
 
@@ -51,7 +50,7 @@ const ConstructorTitlesChart = () => {
       },
       title: {
         display: true,
-        text: "Most Titles By Constructor",
+        text: "Most Race Wins",
         color: "white",
         font: {
           size: "30",
@@ -80,21 +79,21 @@ const ConstructorTitlesChart = () => {
   };
 
   const data = {
-    labels: constructors,
+    labels: winners,
     datasets: [
       {
-        label: "Number of Constructor Titles",
-        data: titles,
-        backgroundColor: "rgba(255, 99, 132, .8)",
+        label: "Number of Wins",
+        data: numberOfWins,
+        backgroundColor: "#6CD3BF",
       },
     ],
   };
 
   return (
-    <div className={classes["constructor-titles"]}>
+    <div className={classes["race-winners"]}>
       <Bar data={data} options={options} height={null} width={null} />
     </div>
   );
 };
 
-export default ConstructorTitlesChart;
+export default MostRaceWinsChart;

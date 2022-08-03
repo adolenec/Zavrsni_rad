@@ -1,0 +1,15 @@
+.race-winners {
+    background: rgb(69, 69, 69);
+    background-image: url('../../../images/history/hamilton.png');
+    background-size: cover;
+    border-radius: 10px;
+    transition: all .4s;
+    padding: .5rem;
+    background-position-y: bottom;
+}
+
+.race-winners:hover {
+    background-image: url('../../../images/history/hamilton.png');
+    background-size: cover;
+    background-position-y: top;
+}

@@ -3,7 +3,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 
-import { getDriverWinners } from "../../../helpers/api/api-winners";
+import { getDriverWinners } from "../../../helpers/api/api-records";
 import classes from "./TitlesChart.module.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
